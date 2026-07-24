@@ -177,6 +177,82 @@
             transform: scale(1.05);
         }
 
+        /* Form Styles */
+        .form-container {
+            background: #f9f9f9;
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 600px;
+            margin: 30px auto;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1em;
+            font-family: Arial, sans-serif;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 5px rgba(102, 126, 234, 0.3);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .form-group button {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .form-group button:hover {
+            transform: scale(1.02);
+        }
+
+        /* Success Message */
+        .success-message {
+            background: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            display: none;
+            border: 1px solid #c3e6cb;
+        }
+
+        .success-message.show {
+            display: block;
+        }
+
         /* Footer */
         footer {
             background: #333;
@@ -203,6 +279,10 @@
             section h2 {
                 font-size: 1.5em;
             }
+
+            .form-container {
+                padding: 20px;
+            }
         }
     </style>
 </head>
@@ -218,6 +298,7 @@
         <ul>
             <li><a href="#storitve">Storitve</a></li>
             <li><a href="#o-nas">O Nas</a></li>
+            <li><a href="#rezervacija">Rezervacija</a></li>
             <li><a href="#kontakt">Kontakt</a></li>
         </ul>
     </nav>
@@ -308,6 +389,65 @@
             </div>
         </section>
 
+        <!-- Rezervacija -->
+        <section id="rezervacija">
+            <h2>Rezerviraj Termin</h2>
+            <div class="form-container">
+                <div class="success-message" id="successMessage">
+                    ✅ Hvala! Vaša rezervacija je bila poslana. Kontaktirali vas bomo v najkrajšem času!
+                </div>
+                
+                <form id="reservationForm" method="POST" action="https://formspree.io/f/mggyygpe">
+                    <div class="form-group">
+                        <label for="name">Ime in Priimek *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Telefonska Številka *</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="service">Izberi Storitev *</label>
+                        <select id="service" name="service" required>
+                            <option value="">-- Izberi masažo --</option>
+                            <option value="Klasična Masaža - €50">Klasična Masaža - €50</option>
+                            <option value="Ayurveda Masaža - €75">Ayurveda Masaža - €75</option>
+                            <option value="Tajska Masaža - €70">Tajska Masaža - €70</option>
+                            <option value="Spa Paket - €150">Spa Paket - €150</option>
+                            <option value="Sportska Masaža - €60">Sportska Masaža - €60</option>
+                            <option value="Masaža za Dojenčke - €35">Masaža za Dojenčke - €35</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="date">Želeni Datum *</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="time">Želeni Čas *</label>
+                        <input type="time" id="time" name="time" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Posebna Opomba</label>
+                        <textarea id="message" name="message" placeholder="Napiši svoje prošnje ali opombe..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit">Pošlji Rezervacijo</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
         <!-- Kontakt -->
         <section id="kontakt">
             <h2>Kontaktirajte Nas</h2>
@@ -332,10 +472,6 @@
                     <p>Pon-Pet: 09:00 - 18:00<br>Sob-Ned: 10:00 - 16:00</p>
                 </div>
             </div>
-
-            <div style="text-align: center; margin-top: 40px;">
-                <button class="btn">Rezerviraj Termin</button>
-            </div>
         </section>
     </main>
 
@@ -344,5 +480,30 @@
         <p>&copy; 2026 Rajski Svet. Vse pravice pridržane.</p>
         <p>Sprostitev in Blagostanje za Vse</p>
     </footer>
+
+    <script>
+        // Handle form submission
+        document.getElementById('reservationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Show success message
+            const successMessage = document.getElementById('successMessage');
+            successMessage.classList.add('show');
+            
+            // Send form via Formspree
+            this.submit();
+            
+            // Reset form
+            setTimeout(() => {
+                this.reset();
+                successMessage.classList.remove('show');
+            }, 3000);
+        });
+
+        // Set minimum date to today
+        const dateInput = document.getElementById('date');
+        const today = new Date().toISOString().split('T')[0];
+        dateInput.setAttribute('min', today);
+    </script>
 </body>
 </html>
