@@ -229,23 +229,23 @@
         <!-- Info Box -->
         <div class="info-box">
             <p><strong>ℹ️ Navodila:</strong></p>
-            <p>Izpolni obrazec in pošlji rezervacijo. Kontaktirali te bomo v roku 2 ur.</p>
+            <p>Izpolni obrazec. Po kliku "Pošlji Rezervacijo" se bo odprl tvoj email klient s predizpolnjeno rezervacijo.</p>
         </div>
 
         <!-- Success Message -->
         <div class="success-message" id="successMessage">
-            ✅ <strong>Hvala!</strong> Vaša rezervacija je bila poslana. Kontaktirali vas bomo v najkrajšem času!
+            ✅ <strong>Odličko!</strong> Tvoj email se je odprl. Pošlji email in naša rezervacija bo poslana!
         </div>
 
         <!-- Reservation Form -->
-        <form id="reservationForm" method="POST" action="https://formspree.io/f/meoqvkjq">
+        <form id="reservationForm">
             <div class="form-group">
                 <label for="name">Ime in Priimek <span class="required">*</span></label>
                 <input type="text" id="name" name="name" placeholder="Vnesi svoje ime in priimek" required>
             </div>
 
             <div class="form-group">
-                <label for="email">Email <span class="required">*</span></label>
+                <label for="email">Tvoj Email <span class="required">*</span></label>
                 <input type="email" id="email" name="email" placeholder="Vnesi svoj email" required>
             </div>
 
@@ -346,22 +346,47 @@
     </div>
 
     <script>
-        // Handle form submission
+        // Handle form submission with mailto
         document.getElementById('reservationForm').addEventListener('submit', function(e) {
             e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const service = document.getElementById('service').value;
+            const date = document.getElementById('date').value;
+            const time = document.getElementById('time').value;
+            const message = document.getElementById('message').value;
+            
+            // Create email subject and body
+            const subject = encodeURIComponent('Rezervacija - Rajski Svet');
+            const body = encodeURIComponent(
+                `NOVA REZERVACIJA\n\n` +
+                `Ime in Priimek: ${name}\n` +
+                `Email: ${email}\n` +
+                `Telefonska Številka: ${phone}\n` +
+                `Storitev: ${service}\n` +
+                `Datum: ${date}\n` +
+                `Čas: ${time}\n` +
+                `${message ? `\nPosebna Opomba:\n${message}` : ''}`
+            );
+            
+            // Create mailto link
+            const mailtoLink = `mailto:rus.zerocool@gmail.com?subject=${subject}&body=${body}`;
+            
+            // Open email client
+            window.location.href = mailtoLink;
             
             // Show success message
             const successMessage = document.getElementById('successMessage');
             successMessage.classList.add('show');
             
-            // Send form via Formspree
-            this.submit();
-            
-            // Reset form after 3 seconds
+            // Reset form after 2 seconds
             setTimeout(() => {
                 this.reset();
                 successMessage.classList.remove('show');
-            }, 3000);
+            }, 2000);
         });
 
         // Set minimum date to today
