@@ -6,18 +6,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Rajski Svet | Masaže & Wellness</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<title>Rajski Svet | Masaže in Wellness</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
+
 <style>
 
-/* ===========================
-   RESET
-=========================== */
 
 *{
     margin:0;
@@ -26,27 +21,40 @@
     scroll-behavior:smooth;
 }
 
+
 :root{
 
-    --bg:#E9DDCF;
-    --section:#F7F2EC;
-    --white:#ffffff;
+    --background:#F8F4EF;
 
-    --primary:#8A6244;
-    --primary-dark:#6F4D35;
+    --section:#F3ECE3;
 
-    --text:#463B34;
-    --border:#D8C6B5;
+    --primary:#B27A58;
 
-    --shadow:0 15px 40px rgba(0,0,0,.08);
+    --primary-hover:#9D684A;
+
+    --heading:#5C4435;
+
+    --text:#6F6258;
+
+    --icon:#B27A58;
+
+    --border:#DDD1C2;
+
+    --logo:#E9DDCF;
+
+    --white:#FFFFFF;
+
+    --shadow:
+    0 15px 40px rgba(92,68,53,.10);
 
 }
+
 
 body{
 
     font-family:Poppins,sans-serif;
 
-    background:var(--bg);
+    background:var(--background);
 
     color:var(--text);
 
@@ -54,83 +62,103 @@ body{
 
 }
 
-img{
 
-    display:block;
-    width:100%;
+h1,h2,h3,h4{
+
+    color:var(--heading);
 
 }
+
 
 a{
 
     text-decoration:none;
+
     color:inherit;
 
 }
 
+
+img{
+
+    width:100%;
+
+    display:block;
+
+}
+
+
 .container{
 
     width:min(1200px,90%);
+
     margin:auto;
 
 }
 
+
 section{
 
-    padding:110px 0;
+    padding:100px 0;
 
 }
 
-/* ===========================
-   HEADER
-=========================== */
+
+
+/* ======================
+HEADER
+====================== */
+
 
 header{
 
     position:fixed;
 
     top:0;
+
     left:0;
 
     width:100%;
 
     z-index:1000;
 
-    background:rgba(247,242,236,.94);
+    background:rgba(248,244,239,.92);
 
-    backdrop-filter:blur(14px);
+    backdrop-filter:blur(15px);
 
-    border-bottom:1px solid rgba(0,0,0,.05);
+    border-bottom:1px solid var(--border);
 
 }
 
+
+
 nav{
-
-    width:min(1200px,90%);
-
-    margin:auto;
 
     height:90px;
 
     display:flex;
 
-    justify-content:space-between;
-
     align-items:center;
 
+    justify-content:space-between;
+
 }
+
+
 
 .logo{
 
     font-family:"Cormorant Garamond",serif;
 
-    font-size:36px;
+    font-size:38px;
 
     font-weight:700;
 
-    color:var(--primary);
+    color:#B27A58;
 
 }
+
+
 
 .menu{
 
@@ -140,13 +168,19 @@ nav{
 
 }
 
+
+
 .menu a{
 
     font-weight:500;
 
+    color:var(--heading);
+
     transition:.3s;
 
 }
+
+
 
 .menu a:hover{
 
@@ -154,37 +188,45 @@ nav{
 
 }
 
+
+
+
 .btn{
 
     display:inline-block;
 
-    padding:15px 34px;
+    padding:14px 35px;
+
+    border-radius:50px;
 
     background:var(--primary);
 
     color:white;
 
-    border-radius:40px;
-
     font-weight:600;
 
-    transition:.35s;
+    transition:.3s;
 
-    box-shadow:0 12px 30px rgba(138,98,68,.25);
+    box-shadow:0 10px 25px rgba(178,122,88,.25);
 
 }
 
+
+
 .btn:hover{
 
-    background:var(--primary-dark);
+    background:var(--primary-hover);
 
     transform:translateY(-3px);
 
 }
 
-/* ===========================
-   HERO
-=========================== */
+
+
+/* ======================
+HERO
+====================== */
+
 
 .hero{
 
@@ -194,12 +236,16 @@ nav{
 
     align-items:center;
 
+
     background:
+
     linear-gradient(
-    rgba(70,50,35,.30),
-    rgba(70,50,35,.30)
+    rgba(92,68,53,.35),
+    rgba(92,68,53,.35)
     ),
+
     url("https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=1800");
+
 
     background-size:cover;
 
@@ -207,59 +253,69 @@ nav{
 
 }
 
+
+
 .hero-content{
 
-    width:min(700px,90%);
-
-    margin-left:8%;
+    max-width:700px;
 
     color:white;
 
 }
 
-.hero small{
 
-    display:block;
+
+.hero small{
 
     letter-spacing:3px;
 
     text-transform:uppercase;
 
-    margin-bottom:18px;
+    color:white;
 
     font-size:14px;
 
 }
 
+
+
 .hero h1{
+
+    margin-top:20px;
 
     font-family:"Cormorant Garamond",serif;
 
-    font-size:78px;
+    font-size:80px;
 
-    line-height:1.05;
+    line-height:1;
 
-    margin-bottom:25px;
-
-    font-weight:600;
+    color:white;
 
 }
+
+
 
 .hero span{
 
-    color:#F6E7D8;
+    color:#E9DDCF;
 
 }
+
+
 
 .hero p{
 
+    margin:30px 0;
+
     font-size:20px;
 
-    max-width:560px;
+    color:white;
 
-    margin-bottom:40px;
+    max-width:600px;
 
 }
+
+
 
 .hero-buttons{
 
@@ -267,25 +323,25 @@ nav{
 
     gap:20px;
 
-    flex-wrap:wrap;
-
 }
+
+
 
 .btn-outline{
 
-    display:inline-block;
-
-    padding:15px 34px;
-
-    border-radius:40px;
+    padding:14px 35px;
 
     border:2px solid white;
 
+    border-radius:50px;
+
     color:white;
 
-    transition:.35s;
+    transition:.3s;
 
 }
+
+
 
 .btn-outline:hover{
 
@@ -295,27 +351,32 @@ nav{
 
 }
 
-/* ===========================
-   SECTION TITLE
-=========================== */
+
+
+/* ======================
+NASLOVI
+====================== */
+
 
 .title{
 
     text-align:center;
 
-    margin-bottom:70px;
+    margin-bottom:60px;
 
 }
+
+
 
 .title h2{
 
     font-family:"Cormorant Garamond",serif;
 
-    font-size:56px;
-
-    font-weight:600;
+    font-size:55px;
 
 }
+
+
 
 .title span{
 
@@ -323,79 +384,122 @@ nav{
 
 }
 
+
 </style>
+
 
 </head>
 
+
 <body>
+
 
 <header>
 
-<nav>
+<nav class="container">
+
 
 <div class="logo">
+
 Rajski Svet
+
 </div>
+
 
 <div class="menu">
 
 <a href="#home">Domov</a>
+
 <a href="#about">O nas</a>
+
 <a href="#services">Storitve</a>
+
 <a href="#gallery">Galerija</a>
+
 <a href="#pricing">Cenik</a>
+
 <a href="#contact">Kontakt</a>
 
 </div>
 
+
 <a href="#contact" class="btn">
+
 Rezervacija
+
 </a>
+
 
 </nav>
 
 </header>
 
+
+
 <section class="hero" id="home">
+
+
+<div class="container">
+
 
 <div class="hero-content">
 
-<small>Dobrodošli v Rajskem Svetu</small>
+
+<small>
+
+Dobrodošli v Rajskem Svetu
+
+</small>
+
 
 <h1>
 
 Vaš trenutek
+
 <span>miru</span>
 
 </h1>
 
+
 <p>
 
-Profesionalne masaže in wellness tretmaji,
-ki sprostijo telo, umirijo misli in
-obnovijo vašo energijo.
+Profesionalne masaže in wellness tretmaji
+za popolno sprostitev telesa in duha.
 
 </p>
 
+
 <div class="hero-buttons">
 
+
 <a href="#contact" class="btn">
+
 Rezerviraj termin
+
 </a>
+
 
 <a href="#services" class="btn-outline">
-Naše storitve
+
+Storitve
+
 </a>
 
-</div>
 
 </div>
+
+
+</div>
+
+
+</div>
+
 
 </section><style>
 
-/* ===========================
-   ABOUT
-=========================== */
+/* ======================
+ABOUT
+====================== */
 
 .about{
 
@@ -406,37 +510,39 @@ Naše storitve
 
 }
 
-.about-image img{
+
+.about img{
 
     border-radius:30px;
+
     box-shadow:var(--shadow);
 
 }
 
+
 .about-content h2{
 
     font-family:"Cormorant Garamond",serif;
-    font-size:56px;
+
+    font-size:55px;
+
     margin-bottom:25px;
 
 }
 
-.about-content span{
-
-    color:var(--primary);
-
-}
 
 .about-content p{
 
     margin-bottom:20px;
-    color:#65584E;
 
 }
 
-/* ===========================
-   SERVICES
-=========================== */
+
+
+/* ======================
+SERVICES
+====================== */
+
 
 .services{
 
@@ -444,13 +550,18 @@ Naše storitve
 
 }
 
+
 .cards{
 
     display:grid;
+
     grid-template-columns:repeat(3,1fr);
+
     gap:30px;
 
 }
+
+
 
 .card{
 
@@ -464,39 +575,37 @@ Naše storitve
 
     box-shadow:var(--shadow);
 
-    transition:.35s;
+    transition:.3s;
 
 }
+
 
 .card:hover{
 
     transform:translateY(-10px);
 
-    border-color:var(--primary);
-
 }
+
+
 
 .card h3{
 
     font-family:"Cormorant Garamond",serif;
 
-    color:var(--primary);
-
     font-size:32px;
+
+    color:var(--primary);
 
     margin-bottom:15px;
 
 }
 
-.card p{
 
-    color:#65584E;
 
-}
+/* ======================
+GALLERY
+====================== */
 
-/* ===========================
-   GALLERY
-=========================== */
 
 .gallery{
 
@@ -508,19 +617,20 @@ Naše storitve
 
 }
 
+
 .gallery img{
 
     height:300px;
 
     object-fit:cover;
 
-    border-radius:22px;
-
-    box-shadow:var(--shadow);
+    border-radius:25px;
 
     transition:.4s;
 
 }
+
+
 
 .gallery img:hover{
 
@@ -528,167 +638,20 @@ Naše storitve
 
 }
 
-</style>
 
-<section id="about">
 
-<div class="container about">
+/* ======================
+PRICING
+====================== */
 
-<div class="about-image">
-
-<img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=1000" alt="Masaža">
-
-</div>
-
-<div class="about-content">
-
-<h2>
-O <span>nas</span>
-</h2>
-
-<p>
-
-V Rajskem Svetu verjamemo, da je sprostitev
-ključ do boljšega počutja. Naš cilj je ustvariti
-mirno okolje, kjer se lahko popolnoma odklopite
-od vsakodnevnega tempa.
-
-</p>
-
-<p>
-
-Vsaka masaža je prilagojena posamezniku,
-z uporabo kakovostnih naravnih olj
-in profesionalnih tehnik.
-
-</p>
-
-<p>
-
-Prepustite se prijetnemu ambientu,
-strokovnim rokam in občutku popolnega miru.
-
-</p>
-
-<a href="#contact" class="btn">
-Rezerviraj obisk
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-<section class="services" id="services">
-
-<div class="container">
-
-<div class="title">
-
-<h2>
-
-Naše <span>storitve</span>
-
-</h2>
-
-</div>
-
-<div class="cards">
-
-<div class="card">
-
-<h3>
-Klasična masaža
-</h3>
-
-<p>
-
-Odpravlja napetost mišic,
-izboljšuje prekrvavitev
-in sprošča telo.
-
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>
-Relax masaža
-</h3>
-
-<p>
-
-Nežna masaža z aromatičnimi olji,
-namenjena popolni sprostitvi
-in dobremu počutju.
-
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>
-Wellness ritual
-</h3>
-
-<p>
-
-Luksuzna kombinacija masaže,
-nege telesa in sproščujočega
-wellness doživetja.
-
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<section id="gallery">
-
-<div class="container">
-
-<div class="title">
-
-<h2>
-
-Galerija
-
-</h2>
-
-</div>
-
-<div class="gallery">
-
-<img src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?w=900" alt="Wellness">
-
-<img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=900" alt="Spa">
-
-<img src="https://images.unsplash.com/photo-1552693673-1bf958298935?w=900" alt="Masaža">
-
-<img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=900" alt="Sprostitev">
-
-</div>
-
-</div>
-
-</section><style>
-
-/* ===========================
-   PRICING
-=========================== */
 
 .pricing{
 
     background:var(--section);
 
 }
+
+
 
 .price-box{
 
@@ -700,41 +663,37 @@ Galerija
 
 }
 
+
+
 .price-card{
 
     background:white;
 
-    padding:45px 35px;
+    padding:40px;
 
     text-align:center;
 
-    border-radius:30px;
+    border-radius:25px;
 
     border:1px solid var(--border);
 
     box-shadow:var(--shadow);
 
-    transition:.35s;
-
 }
 
-.price-card:hover{
 
-    transform:translateY(-10px);
-
-}
 
 .price-card h3{
 
-    font-family:"Cormorant Garamond",serif;
-
-    font-size:34px;
-
     color:var(--primary);
 
-    margin-bottom:20px;
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:32px;
 
 }
+
+
 
 .price{
 
@@ -742,30 +701,26 @@ Galerija
 
     font-weight:600;
 
-    color:var(--primary-dark);
+    color:var(--heading);
 
-    margin-bottom:25px;
+    margin:20px 0;
 
 }
+
 
 .price-card ul{
 
     list-style:none;
 
-    margin-bottom:30px;
-
-}
-
-.price-card li{
-
-    padding:8px;
+    margin-bottom:25px;
 
 }
 
 
-/* ===========================
-   REVIEWS
-=========================== */
+
+/* ======================
+REVIEWS
+====================== */
 
 
 .reviews{
@@ -777,6 +732,7 @@ Galerija
     gap:30px;
 
 }
+
 
 
 .review{
@@ -792,6 +748,7 @@ Galerija
 }
 
 
+
 .review p{
 
     font-style:italic;
@@ -801,16 +758,10 @@ Galerija
 }
 
 
-.review h4{
 
-    color:var(--primary);
-
-}
-
-
-/* ===========================
-   CONTACT
-=========================== */
+/* ======================
+CONTACT
+====================== */
 
 
 .contact{
@@ -824,17 +775,19 @@ Galerija
 }
 
 
+
 .contact-box{
 
     background:white;
 
     padding:40px;
 
-    border-radius:30px;
+    border-radius:25px;
 
     box-shadow:var(--shadow);
 
 }
+
 
 
 .contact-box h2{
@@ -845,17 +798,16 @@ Galerija
 
     color:var(--primary);
 
-    margin-bottom:20px;
-
 }
 
 
-.contact-box input,
-.contact-box textarea{
+
+input,
+textarea{
 
     width:100%;
 
-    padding:16px;
+    padding:15px;
 
     margin-bottom:15px;
 
@@ -868,7 +820,7 @@ Galerija
 }
 
 
-.contact-box textarea{
+textarea{
 
     height:150px;
 
@@ -877,51 +829,38 @@ Galerija
 }
 
 
-.contact-box button{
 
-    border:none;
-
-    cursor:pointer;
-
-}
-
-
-/* ===========================
-   MAP
-=========================== */
+/* ======================
+MAP FOOTER
+====================== */
 
 
 .map iframe{
 
     width:100%;
 
-    height:420px;
+    height:400px;
 
     border:0;
 
-    border-radius:30px;
-
-    box-shadow:var(--shadow);
+    border-radius:25px;
 
 }
 
 
-/* ===========================
-   FOOTER
-=========================== */
-
 
 footer{
 
-    background:var(--primary-dark);
+    background:var(--heading);
 
     color:white;
 
     text-align:center;
 
-    padding:70px 20px;
+    padding:60px 20px;
 
 }
+
 
 
 footer h2{
@@ -930,18 +869,16 @@ footer h2{
 
     font-size:45px;
 
-    margin-bottom:15px;
-
 }
 
 
 
-/* ===========================
-   RESPONSIVE
-=========================== */
+/* ======================
+RESPONSIVE
+====================== */
 
 
-@media(max-width:1000px){
+@media(max-width:900px){
 
 
 .menu{
@@ -985,35 +922,13 @@ footer h2{
 }
 
 
+
 @media(max-width:600px){
-
-
-section{
-
-    padding:80px 0;
-
-}
-
-
-.hero-content{
-
-    margin:auto;
-
-    text-align:center;
-
-}
 
 
 .hero h1{
 
     font-size:42px;
-
-}
-
-
-.hero-buttons{
-
-    justify-content:center;
 
 }
 
@@ -1025,24 +940,78 @@ section{
 }
 
 
-.title h2{
+.hero-buttons{
 
-    font-size:42px;
-
-}
-
+    flex-direction:column;
 
 }
 
+
+}
 
 </style>
 
 
-<!-- ===========================
-     PRICING
-=========================== -->
 
-<section class="pricing" id="pricing">
+<section id="about">
+
+
+<div class="container about">
+
+
+<div>
+
+<img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=900">
+
+</div>
+
+
+
+<div class="about-content">
+
+
+<h2>
+
+O <span>nas</span>
+
+</h2>
+
+
+<p>
+
+V Rajskem Svetu ustvarjamo miren prostor,
+kjer se telo sprosti in misli umirijo.
+
+</p>
+
+
+<p>
+
+Vsaka masaža je prilagojena vašim potrebam
+z uporabo kakovostnih tehnik in naravnih olj.
+
+</p>
+
+
+<a href="#contact" class="btn">
+
+Kontakt
+
+</a>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+<section class="services" id="services">
+
 
 <div class="container">
 
@@ -1050,7 +1019,135 @@ section{
 <div class="title">
 
 <h2>
+
+Naše <span>storitve</span>
+
+</h2>
+
+</div>
+
+
+
+<div class="cards">
+
+
+<div class="card">
+
+<h3>
+
+Klasična masaža
+
+</h3>
+
+<p>
+
+Sprostitev mišic, zmanjšanje napetosti
+in boljše počutje.
+
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+
+Relax masaža
+
+</h3>
+
+<p>
+
+Nežna sprostitvena masaža
+za popolno regeneracijo.
+
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+
+Wellness tretma
+
+</h3>
+
+<p>
+
+Celovita nega telesa
+v prijetnem ambientu.
+
+</p>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+<section id="gallery">
+
+
+<div class="container">
+
+
+<div class="title">
+
+<h2>
+
+Galerija
+
+</h2>
+
+</div>
+
+
+<div class="gallery">
+
+
+<img src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?w=800">
+
+<img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800">
+
+<img src="https://images.unsplash.com/photo-1552693673-1bf958298935?w=800">
+
+<img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=800">
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+<section class="pricing" id="pricing">
+
+
+<div class="container">
+
+
+<div class="title">
+
+<h2>
+
 Naš <span>cenik</span>
+
 </h2>
 
 </div>
@@ -1061,27 +1158,17 @@ Naš <span>cenik</span>
 
 <div class="price-card">
 
-<h3>
-Relax masaža
-</h3>
+<h3>Relax masaža</h3>
 
-<div class="price">
-40€
-</div>
+<div class="price">40€</div>
 
 <ul>
-
 <li>30 minut</li>
-
 <li>Aromatična olja</li>
-
-<li>Popolna sprostitev</li>
-
+<li>Sprostitev</li>
 </ul>
 
-<a href="#contact" class="btn">
-Rezerviraj
-</a>
+<a href="#contact" class="btn">Rezerviraj</a>
 
 </div>
 
@@ -1089,27 +1176,17 @@ Rezerviraj
 
 <div class="price-card">
 
-<h3>
-Klasična masaža
-</h3>
+<h3>Klasična masaža</h3>
 
-<div class="price">
-60€
-</div>
+<div class="price">60€</div>
 
 <ul>
-
 <li>60 minut</li>
-
-<li>Globinska sprostitev</li>
-
+<li>Globinska masaža</li>
 <li>Profesionalna nega</li>
-
 </ul>
 
-<a href="#contact" class="btn">
-Rezerviraj
-</a>
+<a href="#contact" class="btn">Rezerviraj</a>
 
 </div>
 
@@ -1117,110 +1194,29 @@ Rezerviraj
 
 <div class="price-card">
 
-<h3>
-Premium wellness
-</h3>
+<h3>Premium wellness</h3>
 
-<div class="price">
-90€
-</div>
+<div class="price">90€</div>
 
 <ul>
-
 <li>90 minut</li>
-
 <li>Luksuzni tretma</li>
-
-<li>Popolna regeneracija</li>
-
+<li>Popolna sprostitev</li>
 </ul>
 
-<a href="#contact" class="btn">
-Rezerviraj
-</a>
+<a href="#contact" class="btn">Rezerviraj</a>
 
 </div>
 
 
 </div>
 
+
 </div>
+
 
 </section>
 
-
-
-<!-- ===========================
-     REVIEWS
-=========================== -->
-
-<section>
-
-<div class="container">
-
-
-<div class="title">
-
-<h2>
-Mnenja <span>strank</span>
-</h2>
-
-</div>
-
-
-<div class="reviews">
-
-
-<div class="review">
-
-<p>
-"Čudovit ambient in odlična masaža. Počutila sem se popolnoma sproščeno."
-</p>
-
-<h4>
-- Ana
-</h4>
-
-</div>
-
-
-<div class="review">
-
-<p>
-"Profesionalen pristop, prijaznost in res prijetna izkušnja."
-</p>
-
-<h4>
-- Marko
-</h4>
-
-</div>
-
-
-<div class="review">
-
-<p>
-"Rajski Svet je moj prostor za oddih in sprostitev."
-</p>
-
-<h4>
-- Nina
-</h4>
-
-</div>
-
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- ===========================
-     CONTACT
-=========================== -->
 
 
 <section id="contact">
@@ -1231,23 +1227,13 @@ Mnenja <span>strank</span>
 
 <div class="contact-box">
 
+<h2>Kontakt</h2>
 
-<h2>
-Kontakt
-</h2>
+<p>📍 Ljubljana, Slovenija</p>
 
+<p>📞 +386 40 000 000</p>
 
-<p>
-📍 Ljubljana, Slovenija
-</p>
-
-<p>
-📞 +386 40 000 000
-</p>
-
-<p>
-✉ info@rajskisvet.si
-</p>
+<p>✉ info@rajskisvet.si</p>
 
 
 </div>
@@ -1257,37 +1243,23 @@ Kontakt
 <div class="contact-box">
 
 
-<form action="https://formspree.io/f/mvzedvzw" method="POST">
+<form>
 
 
-<input 
-type="text"
-name="name"
-placeholder="Ime in priimek"
-required>
+<input placeholder="Ime in priimek">
+
+<input placeholder="Email">
+
+<input placeholder="Telefon">
 
 
-<input
-type="email"
-name="email"
-placeholder="Email"
-required>
-
-
-<input
-type="tel"
-name="phone"
-placeholder="Telefon">
-
-
-<textarea
-name="message"
-placeholder="Vaše sporočilo"
-required></textarea>
+<textarea placeholder="Vaše sporočilo"></textarea>
 
 
 <button class="btn">
+
 Pošlji
+
 </button>
 
 
@@ -1313,19 +1285,15 @@ Pošlji
 <div class="title">
 
 <h2>
+
 Kje <span>smo</span>
+
 </h2>
 
 </div>
 
 
-<iframe
-
-src="https://maps.google.com/maps?q=Ljubljana&t=&z=13&output=embed"
-
-loading="lazy">
-
-</iframe>
+<iframe src="https://maps.google.com/maps?q=Ljubljana&t=&z=13&output=embed"></iframe>
 
 
 </div>
@@ -1339,36 +1307,38 @@ loading="lazy">
 
 
 <h2>
+
 Rajski Svet
+
 </h2>
 
 
 <p>
+
 Masaže in wellness za vaše dobro počutje.
+
 </p>
 
 
 <p>
+
 © 2026 Rajski Svet
+
 </p>
 
 
 </footer>
 
 
-
 <script>
 
 
-const animated =
-document.querySelectorAll(
+const items=document.querySelectorAll(
 ".card,.price-card,.review"
 );
 
 
-const observer =
-new IntersectionObserver(
-(entries)=>{
+const observer=new IntersectionObserver(entries=>{
 
 
 entries.forEach(entry=>{
@@ -1378,8 +1348,7 @@ if(entry.isIntersecting){
 
 entry.target.style.opacity="1";
 
-entry.target.style.transform=
-"translateY(0)";
+entry.target.style.transform="translateY(0)";
 
 }
 
@@ -1387,19 +1356,15 @@ entry.target.style.transform=
 });
 
 
-},
-{
-threshold:.2
 });
 
 
-animated.forEach(item=>{
+items.forEach(item=>{
 
 
 item.style.opacity="0";
 
-item.style.transform=
-"translateY(40px)";
+item.style.transform="translateY(40px)";
 
 item.style.transition=".7s";
 
