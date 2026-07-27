@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="sl">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -8,7 +10,9 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
+
 <style>
+
 
 *{
 margin:0;
@@ -18,19 +22,23 @@ scroll-behavior:smooth;
 font-family:Poppins,sans-serif;
 }
 
+
 body{
-background:#0f0f0f;
-color:white;
+background:#ffffff;
+color:#333;
 }
+
 
 a{
 text-decoration:none;
-color:white;
+color:#333;
 }
+
 
 section{
 padding:90px 8%;
 }
+
 
 .container{
 max-width:1200px;
@@ -38,52 +46,93 @@ margin:auto;
 }
 
 
-/* NAV */
+
+/* HEADER */
+
 
 header{
+
 position:fixed;
 top:0;
 width:100%;
 z-index:1000;
-background:rgba(0,0,0,.5);
+
+background:rgba(255,255,255,.85);
 backdrop-filter:blur(15px);
+
+box-shadow:0 5px 20px rgba(0,0,0,.08);
+
 }
+
 
 
 nav{
+
 display:flex;
 justify-content:space-between;
 align-items:center;
+
 padding:20px 8%;
+
 }
+
 
 
 .logo{
+
 font-size:30px;
 font-weight:700;
-color:#d4af37;
+color:#2a9df4;
+
 }
+
 
 
 .menu{
+
 display:flex;
 gap:30px;
+
 }
+
 
 
 .menu a:hover{
-color:#d4af37;
+
+color:#2a9df4;
+
 }
+
 
 
 .btn{
+
 display:inline-block;
+
 padding:14px 30px;
+
 border-radius:50px;
-background:#d4af37;
-color:#111;
+
+background:#2a9df4;
+
+color:white;
+
 font-weight:600;
+
+box-shadow:0 10px 25px rgba(42,157,244,.25);
+
 }
+
+
+
+.btn:hover{
+
+background:#1686d9;
+
+}
+
+
+
 
 
 /* HERO */
@@ -91,31 +140,41 @@ font-weight:600;
 
 .hero{
 
+
 height:100vh;
 
 display:flex;
 
 align-items:center;
 
+
 background:
+
 linear-gradient(
-rgba(0,0,0,.55),
-rgba(0,0,0,.55)
+rgba(0,80,150,.35),
+rgba(0,80,150,.35)
 ),
+
 url("https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=1600");
+
 
 background-size:cover;
 
 background-position:center;
 
+
 }
+
 
 
 .hero-content{
 
 max-width:700px;
 
+color:white;
+
 }
+
 
 
 .hero h1{
@@ -127,11 +186,13 @@ line-height:1.1;
 }
 
 
+
 .hero span{
 
-color:#d4af37;
+color:#b9e6ff;
 
 }
+
 
 
 .hero p{
@@ -141,6 +202,7 @@ font-size:20px;
 margin:30px 0;
 
 }
+
 
 
 .hero-buttons{
@@ -153,15 +215,31 @@ gap:20px;
 
 
 
+
 .btn-outline{
 
-border:2px solid #d4af37;
+
+border:2px solid white;
 
 padding:14px 30px;
 
 border-radius:50px;
 
+color:white;
+
 }
+
+
+
+.btn-outline:hover{
+
+background:white;
+
+color:#2a9df4;
+
+}
+
+
 
 
 
@@ -177,18 +255,24 @@ margin-bottom:60px;
 }
 
 
+
 .title h2{
 
 font-size:45px;
 
+color:#333;
+
 }
+
 
 
 .title span{
 
-color:#d4af37;
+color:#2a9df4;
 
 }
+
+
 
 
 
@@ -208,13 +292,17 @@ align-items:center;
 }
 
 
+
 .about img{
 
 width:100%;
 
 border-radius:30px;
 
+box-shadow:0 20px 40px rgba(0,0,0,.12);
+
 }
+
 
 
 .about h2{
@@ -227,14 +315,17 @@ margin-bottom:20px;
 
 
 
+
+
 /* SERVICES */
 
 
 .services{
 
-background:#151515;
+background:#f2f9ff;
 
 }
+
 
 
 .cards{
@@ -248,33 +339,40 @@ gap:30px;
 }
 
 
+
 .card{
 
-background:#111;
+
+background:white;
 
 padding:35px;
 
 border-radius:25px;
 
-border:1px solid #333;
+border:1px solid #e2edf5;
+
+box-shadow:0 15px 40px rgba(0,0,0,.08);
 
 transition:.3s;
 
+
 }
+
 
 
 .card:hover{
 
 transform:translateY(-10px);
 
-border-color:#d4af37;
+border-color:#2a9df4;
 
 }
 
 
+
 .card h3{
 
-color:#d4af37;
+color:#2a9df4;
 
 margin-bottom:15px;
 
@@ -283,11 +381,13 @@ font-size:25px;
 }
 
 
+
 .card p{
 
 opacity:.8;
 
 }
+
 
 
 
@@ -305,7 +405,9 @@ gap:20px;
 }
 
 
+
 .gallery img{
+
 
 width:100%;
 
@@ -320,18 +422,20 @@ transition:.4s;
 }
 
 
+
 .gallery img:hover{
 
 transform:scale(1.05);
 
-}
-/* PRICING */
+}/* PRICING */
+
 
 .pricing{
 
-background:#151515;
+background:#f2f9ff;
 
 }
+
 
 
 .price-box{
@@ -348,7 +452,8 @@ gap:30px;
 
 .price-card{
 
-background:#111;
+
+background:white;
 
 padding:40px;
 
@@ -356,7 +461,10 @@ border-radius:25px;
 
 text-align:center;
 
-border:1px solid #333;
+border:1px solid #e2edf5;
+
+box-shadow:0 15px 40px rgba(0,0,0,.08);
+
 
 }
 
@@ -366,7 +474,7 @@ border:1px solid #333;
 
 font-size:25px;
 
-color:#d4af37;
+color:#2a9df4;
 
 margin-bottom:20px;
 
@@ -379,6 +487,8 @@ margin-bottom:20px;
 font-size:45px;
 
 font-weight:700;
+
+color:#333;
 
 margin-bottom:20px;
 
@@ -406,6 +516,8 @@ opacity:.8;
 
 
 
+
+
 /* REVIEWS */
 
 
@@ -423,11 +535,15 @@ gap:30px;
 
 .review{
 
-background:#151515;
+
+background:white;
 
 padding:35px;
 
 border-radius:25px;
+
+box-shadow:0 15px 40px rgba(0,0,0,.08);
+
 
 }
 
@@ -447,9 +563,11 @@ margin-bottom:20px;
 
 .review h4{
 
-color:#d4af37;
+color:#2a9df4;
 
 }
+
+
 
 
 
@@ -471,11 +589,15 @@ gap:40px;
 
 .contact-box{
 
-background:#151515;
+
+background:#f2f9ff;
 
 padding:40px;
 
 border-radius:25px;
+
+box-shadow:0 15px 40px rgba(0,0,0,.08);
+
 
 }
 
@@ -483,7 +605,7 @@ border-radius:25px;
 
 .contact-box h2{
 
-color:#d4af37;
+color:#2a9df4;
 
 margin-bottom:20px;
 
@@ -495,6 +617,7 @@ margin-bottom:20px;
 
 .contact-box textarea{
 
+
 width:100%;
 
 padding:15px;
@@ -503,11 +626,12 @@ margin-bottom:15px;
 
 border-radius:15px;
 
-border:none;
+border:1px solid #dbeaf5;
 
-background:#222;
+background:white;
 
-color:white;
+color:#333;
+
 
 }
 
@@ -534,6 +658,7 @@ cursor:pointer;
 
 
 
+
 /* MAP */
 
 
@@ -552,16 +677,21 @@ border-radius:25px;
 
 
 
+
 /* FOOTER */
 
 
 footer{
 
-background:#080808;
+
+background:#0b6fa4;
+
+color:white;
 
 text-align:center;
 
 padding:50px 8%;
+
 
 }
 
@@ -569,11 +699,12 @@ padding:50px 8%;
 
 footer h2{
 
-color:#d4af37;
+color:white;
 
 margin-bottom:15px;
 
 }
+
 
 
 
@@ -597,12 +728,14 @@ font-size:45px;
 }
 
 
+
 .about,
 .contact{
 
 grid-template-columns:1fr;
 
 }
+
 
 
 .cards,
@@ -614,6 +747,7 @@ grid-template-columns:1fr;
 }
 
 
+
 .gallery{
 
 grid-template-columns:repeat(2,1fr);
@@ -621,7 +755,9 @@ grid-template-columns:repeat(2,1fr);
 }
 
 
+
 }
+
 
 
 
@@ -635,11 +771,13 @@ padding:70px 5%;
 }
 
 
+
 .hero h1{
 
 font-size:35px;
 
 }
+
 
 
 .gallery{
@@ -659,13 +797,17 @@ grid-template-columns:1fr;
 <body>
 
 
+
 <header>
 
+
 <nav>
+
 
 <div class="logo">
 Rajski Svet
 </div>
+
 
 
 <div class="menu">
@@ -685,42 +827,34 @@ Rajski Svet
 </div>
 
 
+
 <a href="#contact" class="btn">
 Rezervacija
 </a>
 
 
+
 </nav>
 
+
 </header>
-
-
-
 <section class="hero" id="home">
-
 
 <div class="hero-content">
 
-
 <h1>
-
 Vaš trenutek
-
 <span>miru</span>
-
 </h1>
 
 
 <p>
-
 Profesionalne masaže in wellness
-za popolno sprostitev telesa.
-
+za popolno sprostitev telesa in duha.
 </p>
 
 
 <div class="hero-buttons">
-
 
 <a href="#contact" class="btn">
 Rezerviraj termin
@@ -731,14 +865,12 @@ Rezerviraj termin
 Storitve
 </a>
 
-
 </div>
 
-
 </div>
-
 
 </section>
+
 
 
 
@@ -759,21 +891,14 @@ Storitve
 
 <div>
 
-
 <h2>
-
-O <span style="color:#d4af37">
-nas
-</span>
-
+O <span>nas</span>
 </h2>
 
 
 <p>
-
 V Rajskem Svetu ustvarjamo miren prostor,
 kjer se lahko sprostite in pozabite na vsakodnevni stres.
-
 </p>
 
 
@@ -781,9 +906,8 @@ kjer se lahko sprostite in pozabite na vsakodnevni stres.
 
 
 <p>
-
-Vsaka masaža je prilagojena vašim potrebam.
-
+Vsaka masaža je prilagojena vašim potrebam
+za popolno počutje telesa in duha.
 </p>
 
 
@@ -806,15 +930,15 @@ Kontakt
 
 
 
+
+
 <section class="services" id="services">
 
 
 <div class="title">
 
 <h2>
-
 Naše <span>storitve</span>
-
 </h2>
 
 </div>
@@ -831,10 +955,12 @@ Klasična masaža
 </h3>
 
 <p>
-Sproščanje mišic in izboljšanje počutja.
+Sprostitev mišic, zmanjšanje napetosti
+in izboljšanje počutja.
 </p>
 
 </div>
+
 
 
 
@@ -845,10 +971,13 @@ Relax masaža
 </h3>
 
 <p>
-Nežna masaža za popolno sprostitev.
+Nežna masaža za popolno sprostitev
+in regeneracijo telesa.
 </p>
 
 </div>
+
+
 
 
 
@@ -859,17 +988,19 @@ Wellness tretma
 </h3>
 
 <p>
-Celovita nega telesa in duha.
+Celovita nega telesa in sprostitev
+v prijetnem okolju.
 </p>
 
 </div>
-
 
 
 </div>
 
 
 </section>
+
+
 
 
 
@@ -884,6 +1015,7 @@ Galerija
 </h2>
 
 </div>
+
 
 
 <div class="container gallery">
@@ -904,15 +1036,25 @@ Galerija
 </div>
 
 
-</section><section class="pricing" id="pricing">
+</section>
+
+
+
+
+
+
+<section class="pricing" id="pricing">
+
 
 <div class="title">
 
 <h2>
-Naš <span style="color:#d4af37">cenik</span>
+Naš <span>cenik</span>
 </h2>
 
 </div>
+
+
 
 
 <div class="container price-box">
@@ -928,17 +1070,25 @@ Relax masaža
 40€
 </div>
 
+
 <ul>
+
 <li>30 minut</li>
+
 <li>Sprostitev telesa</li>
+
 <li>Prilagojen tretma</li>
+
 </ul>
+
 
 <a href="#contact" class="btn">
 Rezerviraj
 </a>
 
+
 </div>
+
 
 
 
@@ -953,17 +1103,26 @@ Klasična masaža
 60€
 </div>
 
+
 <ul>
+
 <li>60 minut</li>
+
 <li>Globoka sprostitev</li>
+
 <li>Profesionalni pristop</li>
+
 </ul>
+
 
 <a href="#contact" class="btn">
 Rezerviraj
 </a>
 
+
 </div>
+
+
 
 
 
@@ -978,22 +1137,33 @@ Premium wellness
 90€
 </div>
 
+
 <ul>
+
 <li>90 minut</li>
+
 <li>Luksuzna nega</li>
+
 <li>Popolna sprostitev</li>
+
 </ul>
+
 
 <a href="#contact" class="btn">
 Rezerviraj
 </a>
 
+
 </div>
 
 
+
 </div>
+
 
 </section>
+
+
 
 
 
@@ -1004,7 +1174,7 @@ Rezerviraj
 <div class="title">
 
 <h2>
-Mnenja <span style="color:#d4af37">strank</span>
+Mnenja <span>strank</span>
 </h2>
 
 </div>
@@ -1012,6 +1182,7 @@ Mnenja <span style="color:#d4af37">strank</span>
 
 
 <div class="container reviews">
+
 
 
 <div class="review">
@@ -1025,6 +1196,8 @@ Mnenja <span style="color:#d4af37">strank</span>
 </h4>
 
 </div>
+
+
 
 
 
@@ -1042,6 +1215,8 @@ Mnenja <span style="color:#d4af37">strank</span>
 
 
 
+
+
 <div class="review">
 
 <p>
@@ -1055,10 +1230,13 @@ Mnenja <span style="color:#d4af37">strank</span>
 </div>
 
 
+
 </div>
 
 
 </section>
+
+
 
 
 
@@ -1077,10 +1255,13 @@ Kontakt
 
 
 
+
 <div class="container contact">
 
 
+
 <div class="contact-box">
+
 
 <h2>
 Rezervacija termina
@@ -1091,9 +1272,11 @@ Rezervacija termina
 📍 Ljubljana, Slovenija
 </p>
 
+
 <p>
 📞 +386 40 000 000
 </p>
+
 
 <p>
 ✉ rus.zerocool@gmail.com
@@ -1106,35 +1289,47 @@ Rezervacija termina
 
 
 
+
 <div class="contact-box">
 
 
-<form>
+<form action="https://formspree.io/f/TVJ_FORM_ID" method="POST">
 
 
 <input 
 type="text"
-placeholder="Ime in priimek">
+name="name"
+placeholder="Ime in priimek"
+required>
+
 
 
 <input
 type="email"
-placeholder="Email">
+name="email"
+placeholder="Email"
+required>
+
 
 
 <input
 type="tel"
+name="phone"
 placeholder="Telefon">
 
 
+
 <textarea
-placeholder="Vaše sporočilo">
-</textarea>
+name="message"
+placeholder="Vaše sporočilo"
+required></textarea>
 
 
-<button class="btn">
+
+<button class="btn" type="submit">
 Pošlji
 </button>
+
 
 
 </form>
@@ -1153,6 +1348,8 @@ Pošlji
 
 
 
+
+
 <section class="map">
 
 
@@ -1162,7 +1359,7 @@ Pošlji
 <div class="title">
 
 <h2>
-Kje <span style="color:#d4af37">smo</span>
+Kje <span>smo</span>
 </h2>
 
 </div>
@@ -1173,19 +1370,17 @@ Kje <span style="color:#d4af37">smo</span>
 
 src="https://maps.google.com/maps?q=Ljubljana&t=&z=13&output=embed"
 
-width="100%"
-
-height="400"
-
 loading="lazy">
 
 </iframe>
+
 
 
 </div>
 
 
 </section>
+
 
 
 
@@ -1216,20 +1411,22 @@ Masaže in wellness za vaše dobro počutje.
 
 
 
+
 <script>
 
-
-// animacija ob scrollu
 
 const elements=document.querySelectorAll(
 ".card,.price-card,.review"
 );
 
 
+
 const observer=new IntersectionObserver(
 (entries)=>{
 
+
 entries.forEach(entry=>{
+
 
 if(entry.isIntersecting){
 
@@ -1239,17 +1436,22 @@ entry.target.style.transform="translateY(0)";
 
 }
 
+
 });
+
 
 },
 {
 threshold:0.2
 }
+
 );
 
 
 
+
 elements.forEach(el=>{
+
 
 el.style.opacity="0";
 
@@ -1257,32 +1459,16 @@ el.style.transform="translateY(40px)";
 
 el.style.transition="0.7s";
 
+
 observer.observe(el);
 
-});
-
-
-
-
-
-// obrazec
-
-
-document.querySelector("form")
-.addEventListener("submit",function(e){
-
-e.preventDefault();
-
-alert(
-"Hvala za sporočilo. Kontaktirali vas bomo."
-);
-
-this.reset();
 
 });
+
 
 
 </script>
+
 
 
 </body>
