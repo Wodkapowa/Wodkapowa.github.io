@@ -1,434 +1,769 @@
 <!DOCTYPE html>
+
 <html lang="sl">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Rajski Svet | Masaže in Wellness</title>
+<meta name="description" content="Rajski Svet – masaže in wellness v Ribnici. Sprostitvene, klasične in premium wellness masaže.">
+
+<title>Rajski Svet | Masaže & Wellness</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 
+/* =========================
+   OSNOVNO
+========================= */
+
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-scroll-behavior:smooth;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
 }
 
 :root{
---background:#F8F4EF;
---section:#F3ECE3;
---primary:#B27A58;
---primary-hover:#9D684A;
---heading:#5C4435;
---text:#6F6258;
---border:#DDD1C2;
---white:#FFFFFF;
---shadow:0 15px 40px rgba(92,68,53,.10);
-}
+    --bg:#F8F3ED;
+    --section:#F2EBE2;
+    --white:#ffffff;
 
+    --text:#6A5C52;
+    --heading:#4F3C31;
+
+    --primary:#B17B59;
+    --primary-dark:#976547;
+
+    --border:#E7DCCF;
+
+    --shadow:0 15px 45px rgba(0,0,0,.08);
+}
 
 body{
-font-family:Poppins,sans-serif;
-background:var(--background);
-color:var(--text);
-line-height:1.8;
+    font-family:Poppins,sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.8;
 }
-
-
-h1,h2,h3,h4{
-color:var(--heading);
-}
-
-
-a{
-text-decoration:none;
-color:inherit;
-}
-
 
 img{
-width:100%;
-display:block;
+    width:100%;
+    display:block;
 }
 
+a{
+    text-decoration:none;
+    color:inherit;
+}
 
 .container{
-width:min(1200px,90%);
-margin:auto;
+    width:min(1200px,92%);
+    margin:auto;
 }
-
 
 section{
-padding:100px 0;
+    padding:90px 0;
 }
 
-
-/* HEADER */
-
-header{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-z-index:1000;
-background:rgba(248,244,239,.95);
-backdrop-filter:blur(15px);
-border-bottom:1px solid var(--border);
+h1,
+h2,
+h3{
+    font-family:"Cormorant Garamond",serif;
+    color:var(--heading);
 }
-
-
-nav{
-height:90px;
-display:flex;
-align-items:center;
-justify-content:space-between;
-}
-
-
-.logo{
-font-family:"Cormorant Garamond",serif;
-font-size:38px;
-font-weight:700;
-color:var(--primary);
-}
-
-
-.menu{
-display:flex;
-gap:30px;
-}
-
-
-.menu a{
-font-weight:500;
-color:var(--heading);
-transition:.3s;
-}
-
-
-.menu a:hover{
-color:var(--primary);
-}
-
-
 
 .btn{
-display:inline-block;
-padding:14px 35px;
-border-radius:50px;
-background:var(--primary);
-color:white;
-font-weight:600;
-transition:.3s;
-box-shadow:0 10px 25px rgba(178,122,88,.25);
+    display:inline-block;
+    padding:16px 38px;
+    background:var(--primary);
+    color:white;
+    border-radius:50px;
+    font-weight:600;
+    border:none;
+    cursor:pointer;
+    transition:.35s;
+    font-family:Poppins,sans-serif;
 }
-
 
 .btn:hover{
-background:var(--primary-hover);
-transform:translateY(-3px);
+    background:var(--primary-dark);
+    transform:translateY(-3px);
 }
 
 
+/* =========================
+   HEADER
+========================= */
 
-/* HERO */
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    background:rgba(248,243,237,.95);
+    backdrop-filter:blur(18px);
+    z-index:999;
+    border-bottom:1px solid var(--border);
+}
+
+nav{
+    height:90px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-family:"Cormorant Garamond",serif;
+    font-size:38px;
+    font-weight:700;
+    color:var(--heading);
+}
+
+.logo small{
+    display:block;
+    font-size:15px;
+    font-family:Poppins,sans-serif;
+    font-weight:400;
+    letter-spacing:1px;
+    color:#8a7667;
+    line-height:1;
+}
+
+.menu{
+    display:flex;
+    gap:40px;
+}
+
+.menu a{
+    font-weight:500;
+    transition:.3s;
+}
+
+.menu a:hover{
+    color:var(--primary);
+}
+
+
+/* =========================
+   HERO
+========================= */
 
 .hero{
-min-height:100vh;
-display:flex;
-align-items:center;
-background:
-linear-gradient(
-rgba(92,68,53,.35),
-rgba(92,68,53,.35)
-),
-url("https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=1800");
-
-background-size:cover;
-background-position:center;
+    padding-top:160px;
+    padding-bottom:90px;
 }
 
-
-.hero-content{
-max-width:700px;
-color:white;
+.hero-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:70px;
+    align-items:center;
 }
 
-
-.hero small{
-letter-spacing:3px;
-text-transform:uppercase;
-color:white;
-font-size:14px;
+.hero h5{
+    letter-spacing:4px;
+    font-weight:500;
+    text-transform:uppercase;
+    color:#8E7766;
+    margin-bottom:20px;
 }
-
 
 .hero h1{
-font-family:"Cormorant Garamond",serif;
-font-size:80px;
-line-height:1;
-color:white;
-margin-top:20px;
+    font-size:82px;
+    line-height:.95;
+    margin-bottom:30px;
 }
-
-
-.hero span{
-color:#E9DDCF;
-}
-
 
 .hero p{
-font-size:20px;
-margin:30px 0;
-color:white;
+    font-size:18px;
+    max-width:520px;
+    margin-bottom:35px;
+}
+
+.hero-image img{
+    border-radius:30px;
+    box-shadow:var(--shadow);
 }
 
 
-.hero-buttons{
-display:flex;
-gap:20px;
+/* =========================
+   FEATURES
+========================= */
+
+.features{
+    padding-top:20px;
+}
+
+.feature-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:30px;
+}
+
+.feature{
+    background:white;
+    padding:40px 30px;
+    border-radius:25px;
+    text-align:center;
+    box-shadow:var(--shadow);
+    transition:.35s;
+}
+
+.feature:hover{
+    transform:translateY(-7px);
+}
+
+.feature i{
+    font-size:42px;
+    display:block;
+    margin-bottom:20px;
+    font-style:normal;
+}
+
+.feature h3{
+    font-size:28px;
+    margin-bottom:15px;
+}
+
+.feature p{
+    font-size:15px;
 }
 
 
-.btn-outline{
-padding:14px 35px;
-border:2px solid white;
-border-radius:50px;
-color:white;
-}
-
-
-
-/* TITLE */
+/* =========================
+   NASLOVI
+========================= */
 
 .title{
-text-align:center;
-margin-bottom:60px;
+    text-align:center;
+    margin-bottom:60px;
 }
-
 
 .title h2{
-font-family:"Cormorant Garamond",serif;
-font-size:55px;
+    font-size:60px;
+    line-height:1.1;
 }
-
 
 .title span{
-color:var(--primary);
+    color:var(--primary);
+}
+
+.title p{
+    margin-top:15px;
 }
 
 
-
-/* ABOUT */
+/* =========================
+   ABOUT
+========================= */
 
 .about{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:70px;
-align-items:center;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:70px;
+    align-items:center;
 }
-
 
 .about img{
-border-radius:30px;
-box-shadow:var(--shadow);
+    border-radius:30px;
+    box-shadow:var(--shadow);
+}
+
+.about h2{
+    font-size:58px;
+    line-height:1.05;
+    margin-bottom:25px;
+}
+
+.about p{
+    margin-bottom:18px;
 }
 
 
-.about-content p{
-margin-bottom:20px;
+/* =========================
+   CENIK
+========================= */
+
+.pricing-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:35px;
 }
-
-
-
-/* CARDS */
-
-.services{
-background:var(--section);
-}
-
-
-.cards{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:30px;
-}
-
-
-.card{
-background:white;
-padding:40px;
-border-radius:25px;
-border:1px solid var(--border);
-box-shadow:var(--shadow);
-}
-
-
-.card h3{
-font-family:"Cormorant Garamond",serif;
-font-size:32px;
-color:var(--primary);
-margin-bottom:15px;
-}
-
-
-
-/* PRICING */
-
-.pricing{
-background:var(--section);
-}
-
-
-.price-box{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:30px;
-}
-
 
 .price-card{
-background:white;
-padding:40px;
-text-align:center;
-border-radius:25px;
-border:1px solid var(--border);
-box-shadow:var(--shadow);
-display:flex;
-flex-direction:column;
-align-items:center;
+    background:white;
+    padding:45px;
+    border-radius:30px;
+    box-shadow:var(--shadow);
+    text-align:center;
+    transition:.35s;
+    position:relative;
 }
 
+.price-card:hover{
+    transform:translateY(-8px);
+}
+
+.price-card.featured{
+    border:3px solid var(--primary);
+}
+
+.price-card.featured::before{
+    content:"NAJBOLJ PRILJUBLJENO";
+    position:absolute;
+    top:-15px;
+    left:50%;
+    transform:translateX(-50%);
+    background:var(--primary);
+    color:white;
+    padding:6px 18px;
+    border-radius:30px;
+    font-size:11px;
+    font-weight:600;
+    letter-spacing:.5px;
+    white-space:nowrap;
+}
 
 .price-card h3{
-font-family:"Cormorant Garamond",serif;
-font-size:32px;
-color:var(--primary);
+    font-size:34px;
 }
-
 
 .price{
-font-size:50px;
-font-weight:600;
-color:var(--heading);
-margin:20px 0;
+    font-size:60px;
+    color:var(--primary);
+    margin:20px 0;
+    font-family:"Cormorant Garamond",serif;
+    font-weight:600;
+}
+
+.price-card p{
+    margin:6px 0;
 }
 
 
-.price-card ul{
-list-style:none;
-margin-bottom:30px;
+/* =========================
+   KONTAKT
+========================= */
+
+.contact-section{
+    background:var(--bg);
+}
+
+.contact-wrapper{
+    display:grid;
+    grid-template-columns:.9fr 1.1fr;
+    gap:60px;
+    align-items:stretch;
+}
+
+.contact-info,
+.contact-form-box{
+    background:white;
+    border-radius:30px;
+    padding:50px;
+    box-shadow:var(--shadow);
+}
+
+.contact-info{
+    background:linear-gradient(145deg,#F1E5D8,#FAF6F1);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.contact-info h2{
+    font-size:52px;
+    line-height:1.05;
+    margin-bottom:25px;
+}
+
+.contact-info h2 span{
+    color:var(--primary);
+}
+
+.contact-info > p{
+    margin-bottom:30px;
+}
+
+.contact-detail{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    margin-bottom:18px;
+    font-size:15px;
+}
+
+.contact-icon{
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    background:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+    box-shadow:0 5px 18px rgba(0,0,0,.06);
+    font-size:19px;
+}
+
+.contact-form-box h2{
+    font-size:44px;
+    line-height:1.1;
+    margin-bottom:10px;
+}
+
+.form-subtitle{
+    margin-bottom:30px;
+    color:#8a7667;
+}
+
+#kontaktForm{
+    display:grid;
+    gap:18px;
+}
+
+.form-group{
+    width:100%;
+}
+
+#kontaktForm input,
+#kontaktForm textarea{
+    width:100%;
+    border:1px solid var(--border);
+    background:#FAF7F3;
+    color:var(--text);
+    border-radius:15px;
+    padding:16px 18px;
+    font-family:Poppins,sans-serif;
+    font-size:15px;
+    outline:none;
+    transition:.3s;
+}
+
+#kontaktForm input{
+    height:58px;
+}
+
+#kontaktForm textarea{
+    min-height:150px;
+    resize:vertical;
+}
+
+#kontaktForm input::placeholder,
+#kontaktForm textarea::placeholder{
+    color:#A99A8D;
+}
+
+#kontaktForm input:focus,
+#kontaktForm textarea:focus{
+    border-color:var(--primary);
+    background:#fff;
+    box-shadow:0 0 0 4px rgba(177,123,89,.10);
+}
+
+#sendBtn{
+    width:100%;
+    margin-top:5px;
+    font-size:15px;
+}
+
+#sendBtn:disabled{
+    opacity:.7;
+    cursor:not-allowed;
+    transform:none;
+}
+
+#status{
+    text-align:center;
+    font-size:14px;
+    min-height:25px;
+}
+
+.success-message{
+    background:#EDF7EF;
+    color:#47734E;
+    border:1px solid #CCE5D0;
+    border-radius:12px;
+    padding:12px 15px;
+}
+
+.error-message{
+    background:#FFF0EE;
+    color:#9A5148;
+    border:1px solid #EFD0CB;
+    border-radius:12px;
+    padding:12px 15px;
 }
 
 
+/* =========================
+   MAPA
+========================= */
 
-/* CONTACT */
-
-.contact{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:40px;
-align-items:start;
+.map-container iframe{
+    width:100%;
+    height:450px;
+    border:0;
+    border-radius:30px;
+    box-shadow:var(--shadow);
 }
 
 
-.contact-box{
-background:white;
-padding:40px;
-border-radius:25px;
-box-shadow:var(--shadow);
-}
-
-
-.contact-box h2{
-font-family:"Cormorant Garamond",serif;
-font-size:42px;
-color:var(--primary);
-}
-
-
-.contact-box form{
-display:flex;
-flex-direction:column;
-}
-
-
-input,
-textarea{
-width:100%;
-padding:15px;
-margin-bottom:15px;
-border-radius:15px;
-border:1px solid var(--border);
-font-family:Poppins,sans-serif;
-}
-
-
-textarea{
-height:150px;
-resize:none;
-}
-
-
-/* MAP */
-
-.map iframe{
-width:100%;
-height:400px;
-border:0;
-border-radius:25px;
-}
-
-
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
 
 footer{
-background:var(--heading);
-color:white;
-padding:60px 20px;
-text-align:center;
-display:flex;
-flex-direction:column;
-align-items:center;
-justify-content:center;
+    background:#4F3C31;
+    color:white;
+    padding:80px 0 30px;
 }
 
+.footer-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:50px;
+    margin-bottom:50px;
+}
+
+footer h2,
+footer h3{
+    color:white;
+}
 
 footer h2{
-font-family:"Cormorant Garamond",serif;
-font-size:45px;
-color:white;
+    font-size:42px;
+    margin-bottom:20px;
 }
 
+footer h3{
+    margin-bottom:20px;
+}
 
 footer p{
-text-align:center;
+    opacity:.85;
+    margin-bottom:5px;
+}
+
+.footer-bottom{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:15px;
+    padding-top:30px;
+    border-top:1px solid rgba(255,255,255,.15);
+}
+
+.socials{
+    display:flex;
+    gap:15px;
+    font-size:24px;
+}
+
+.socials a{
+    transition:.3s;
+}
+
+.socials a:hover{
+    transform:translateY(-3px);
 }
 
 
-/* MOBILE */
+/* =========================
+   MOBILE
+========================= */
 
 @media(max-width:900px){
 
-.menu{
-display:none;
-}
+    header{
+        padding:0 15px;
+    }
 
-.about,
-.contact,
-.price-box,
-.cards{
-grid-template-columns:1fr;
-}
+    nav{
+        height:75px;
+    }
 
+    .logo{
+        font-size:30px;
+    }
 
-.hero h1{
-font-size:55px;
-}
+    .logo small{
+        font-size:11px;
+    }
 
+    .menu{
+        display:none;
+    }
+
+    header .btn{
+        padding:11px 20px;
+        font-size:13px;
+    }
+
+    section{
+        padding:70px 0;
+    }
+
+    /* HERO */
+
+    .hero{
+        padding-top:120px;
+        padding-bottom:60px;
+    }
+
+    .hero-grid{
+        grid-template-columns:1fr;
+        gap:40px;
+        text-align:center;
+    }
+
+    .hero h5{
+        font-size:12px;
+        letter-spacing:2px;
+    }
+
+    .hero h1{
+        font-size:48px;
+        line-height:1.05;
+    }
+
+    .hero p{
+        font-size:16px;
+        margin:20px auto 30px;
+        max-width:100%;
+    }
+
+    .hero-image{
+        order:-1;
+    }
+
+    .hero-image img{
+        border-radius:24px;
+    }
+
+    /* NASLOVI */
+
+    .title{
+        margin-bottom:40px;
+    }
+
+    .title h2{
+        font-size:42px;
+    }
+
+    .title p{
+        font-size:15px;
+    }
+
+    /* ABOUT */
+
+    .about{
+        grid-template-columns:1fr;
+        gap:35px;
+    }
+
+    .about h2{
+        font-size:42px;
+        text-align:center;
+    }
+
+    .about p{
+        font-size:16px;
+        text-align:center;
+    }
+
+    .about .btn{
+        display:table;
+        margin:30px auto 0;
+    }
+
+    /* FEATURES */
+
+    .feature-grid{
+        grid-template-columns:1fr;
+        gap:20px;
+    }
+
+    .feature{
+        padding:30px;
+    }
+
+    /* PRICING */
+
+    .pricing-grid{
+        grid-template-columns:1fr;
+        gap:25px;
+    }
+
+    .price-card{
+        padding:35px 25px;
+    }
+
+    .price{
+        font-size:52px;
+    }
+
+    /* CONTACT */
+
+    .contact-wrapper{
+        grid-template-columns:1fr;
+        gap:25px;
+    }
+
+    .contact-info,
+    .contact-form-box{
+        padding:35px 25px;
+    }
+
+    .contact-info h2{
+        font-size:42px;
+    }
+
+    .contact-form-box h2{
+        font-size:38px;
+    }
+
+    #kontaktForm input{
+        height:56px;
+    }
+
+    #kontaktForm textarea{
+        min-height:140px;
+    }
+
+    /* MAP */
+
+    .map-container iframe{
+        height:300px;
+        border-radius:20px;
+    }
+
+    /* FOOTER */
+
+    footer{
+        text-align:center;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+        gap:35px;
+    }
+
+    footer h2{
+        font-size:38px;
+    }
+
+    .footer-bottom{
+        flex-direction:column;
+    }
+
+    .socials{
+        justify-content:center;
+    }
 }
 
 </style>
@@ -437,114 +772,290 @@ font-size:55px;
 
 <body>
 
+<!-- =========================
+     HEADER
+========================= -->
 
 <header>
 
-<nav class="container">
+<div class="container">
+
+<nav>
 
 <div class="logo">
-Rajski Svet
+    Rajski Svet
+    <small>Masaže & Wellness</small>
 </div>
-
 
 <div class="menu">
-
-<a href="#home">Domov</a>
-<a href="#services">Storitve</a>
-<a href="#massage">Masaža</a>
-<a href="#pricing">Cenik</a>
-<a href="#contact">Kontakt</a>
-
+    <a href="#home">Domov</a>
+    <a href="#about">O meni</a>
+    <a href="#services">Masaže</a>
+    <a href="#pricing">Cenik</a>
+    <a href="#contact">Kontakt</a>
 </div>
 
-
 <a href="#contact" class="btn">
-Rezervacija
+    Rezervacija
 </a>
 
 </nav>
 
+</div>
+
 </header>
 
-
+<!-- =========================
+     HERO
+========================= -->
 
 <section class="hero" id="home">
 
 <div class="container">
 
-<div class="hero-content">
+<div class="hero-grid">
 
-<small>
-Dobrodošli v Rajskem Svetu
-</small>
+<div>
 
+<h5>
+    Čas za vas. Dotik, ki sprosti.
+</h5>
 
 <h1>
-Vaš trenutek
-<span>miru</span>
+    Sprostite telo.<br>
+    Umirite um.
 </h1>
 
-
 <p>
-Profesionalne masaže in wellness tretmaji za popolno sprostitev telesa in duha.
+    Klasična sprostitvena masaža za popolno ravnovesje
+    telesa in duha. Podarite si trenutek miru in obnovite
+    svojo energijo.
 </p>
 
-
-<div class="hero-buttons">
-
 <a href="#contact" class="btn">
-Rezerviraj termin
+    Rezerviraj termin
 </a>
 
 </div>
 
+<div class="hero-image">
+
+<img
+src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=1200&q=80"
+alt="Sprostitvena masaža">
+
+</div>
 
 </div>
 
 </div>
 
 </section>
-<section id="massage">
+
+<!-- =========================
+     FEATURES
+========================= -->
+
+<section class="features">
 
 <div class="container">
 
-<div class="title">
-<h2>
-Klasična <span>sprostitvena masaža</span>
-</h2>
-<p>
-Posvetite trenutek sebi.
-</p>
+<div class="feature-grid">
+
+<div class="feature">
+    <i>🪷</i>
+    <h3>Popolna sprostitev</h3>
+    <p>
+        Masaža pomaga zmanjšati stres, sprostiti mišice
+        in izboljšati splošno počutje.
+    </p>
 </div>
 
+<div class="feature">
+    <i>🤍</i>
+    <h3>Nova energija</h3>
+    <p>
+        Spodbuja boljšo prekrvavitev, regeneracijo
+        in ravnovesje telesa.
+    </p>
+</div>
+
+<div class="feature">
+    <i>🌿</i>
+    <h3>Naraven pristop</h3>
+    <p>
+        Uporabljam kakovostna olja ter nežne
+        in učinkovite tehnike.
+    </p>
+</div>
+
+<div class="feature">
+    <i>✨</i>
+    <h3>Čas zase</h3>
+    <p>
+        Podarite svojemu telesu mir, sprostitev
+        in dobro počutje.
+    </p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section id="about">
+
+<div class="container">
 
 <div class="about">
 
 <div>
-<img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=900" alt="Klasična masaža">
-</div>
 
-
-<div class="about-content">
+<h2>
+    Vaše dobro počutje je moje poslanstvo.
+</h2>
 
 <p>
-V hitrem tempu življenja pogosto pozabimo prisluhniti svojemu telesu. Dolgotrajno sedenje, stres, fizični napori in vsakodnevne obveznosti se sčasoma pokažejo kot napetost v mišicah, utrujenost ali občutek, da nam je zmanjkalo energije.
+    Sem certificirana maserka in verjamem, da ima kakovostna
+    masaža moč sprostiti telo, umiriti misli ter povrniti energijo.
 </p>
 
 <p>
-Klasična sprostitvena masaža je priložnost, da se za trenutek ustavite, umirite misli in svojemu telesu podarite nego, ki si jo zasluži.
-</p>
-
-<p>
-Z nežnimi in premišljenimi gibi pomaga sprostiti napete mišice, izboljšati prekrvavitev ter ustvariti občutek lahkotnosti in dobrega počutja.
-</p>
-
-<p>
-Ne gre le za masažo. Gre za čas, ki ga namenite sebi.
+    Vsaki stranki se posvetim individualno, da je obisk prijeten,
+    miren in popolnoma prilagojen.
 </p>
 
 <a href="#contact" class="btn">
-Rezerviraj termin
+    Več o meni
+</a>
+
+</div>
+
+<div>
+
+<img
+src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=1200&q=80"
+alt="Wellness salon">
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+     SERVICES
+========================= -->
+
+<section id="services" style="background:var(--section);">
+
+<div class="container">
+
+<div class="title">
+
+<h2>
+    Naše <span>masaže</span>
+</h2>
+
+<p>
+    Izberite tretma, ki najbolj ustreza vašim željam in potrebam.
+</p>
+
+</div>
+
+<div class="feature-grid">
+
+<div class="feature">
+    <i>💆</i>
+    <h3>Klasična masaža</h3>
+    <p>
+        Sprošča napete mišice, izboljšuje prekrvavitev
+        in pomaga pri vsakodnevni napetosti.
+    </p>
+</div>
+
+<div class="feature">
+    <i>🌸</i>
+    <h3>Relax masaža</h3>
+    <p>
+        Nežna sprostitvena masaža z aromatičnimi olji
+        za popoln odklop od vsakdana.
+    </p>
+</div>
+
+<div class="feature">
+    <i>🔥</i>
+    <h3>Premium Wellness</h3>
+    <p>
+        Daljši tretma za popolno regeneracijo telesa
+        in uma v prijetnem ambientu.
+    </p>
+</div>
+
+<div class="feature">
+    <i>🕊️</i>
+    <h3>Individualni pristop</h3>
+    <p>
+        Vsaka masaža je prilagojena vašim željam,
+        počutju in stopnji napetosti mišic.
+    </p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+     HOW IT WORKS
+========================= -->
+
+<section>
+
+<div class="container">
+
+<div class="about">
+
+<div>
+
+<img
+src="https://images.unsplash.com/photo-1507652313519-d4e9174996dd?w=1200&q=80"
+alt="Spa in wellness">
+
+</div>
+
+<div>
+
+<h2>
+    Kako poteka obisk?
+</h2>
+
+<p>
+    Vsak obisk se začne s kratkim pogovorom, kjer skupaj
+    ugotovimo vaše želje in morebitne težave.
+</p>
+
+<p>
+    Masaža je popolnoma prilagojena vašemu telesu,
+    zato je vsak obisk unikaten in prijeten.
+</p>
+
+<p>
+    Med tretmajem uporabljam kakovostna masažna olja
+    ter ustvarim sproščeno vzdušje z nežno glasbo
+    in prijetnimi aromami.
+</p>
+
+<a href="#contact" class="btn">
+    Rezerviraj termin
 </a>
 
 </div>
@@ -555,62 +1066,87 @@ Rezerviraj termin
 
 </section>
 
+<!-- =========================
+     PRICING
+========================= -->
 
-
-<section class="services" id="services">
+<section id="pricing" style="background:var(--section);">
 
 <div class="container">
 
 <div class="title">
 
 <h2>
-Zakaj si <span>privoščiti masažo?</span>
+    Cenik <span>storitev</span>
 </h2>
 
-</div>
-
-
-<div class="cards">
-
-
-<div class="card">
-
-<h3>
-🤍 Sprostitev mišic
-</h3>
-
 <p>
-Sprošča napete in utrujene mišice ter pomaga zmanjšati občutek stresa in napetosti.
+    Izberite tretma in si podarite čas zase.
 </p>
 
 </div>
 
+<div class="pricing-grid">
 
-<div class="card">
+<div class="price-card">
 
-<h3>
-🤍 Boljše počutje
-</h3>
+<h3>Relax masaža</h3>
 
-<p>
-Izboljša prekrvavitev, sprosti telo in ustvari občutek lahkotnosti.
-</p>
+<div class="price">
+    40€
+</div>
+
+<p>30 minut</p>
+<p>Aromatična olja</p>
+<p>Sprostitev telesa</p>
+
+<br>
+
+<a href="#contact" class="btn">
+    Rezerviraj
+</a>
 
 </div>
 
+<div class="price-card featured">
 
-<div class="card">
+<h3>Klasična masaža</h3>
 
-<h3>
-🤍 Regeneracija
-</h3>
+<div class="price">
+    60€
+</div>
 
-<p>
-Pomaga telesu po fizičnih naporih ter omogoča popoln odklop.
-</p>
+<p>60 minut</p>
+<p>Individualni pristop</p>
+<p>Globoka sprostitev mišic</p>
+
+<br>
+
+<a href="#contact" class="btn">
+    Rezerviraj
+</a>
 
 </div>
 
+<div class="price-card">
+
+<h3>Premium Wellness</h3>
+
+<div class="price">
+    90€
+</div>
+
+<p>90 minut</p>
+<p>Luksuzni wellness tretma</p>
+<p>Popolna regeneracija</p>
+
+<br>
+
+<a href="#contact" class="btn">
+    Rezerviraj
+</a>
+
+</div>
 
 </div>
 
@@ -618,8 +1154,169 @@ Pomaga telesu po fizičnih naporih ter omogoča popoln odklop.
 
 </section>
 
+<!-- =========================
+     CONTACT
+========================= -->
 
+<section id="contact" class="contact-section">
 
+<div class="container">
+
+<div class="title">
+
+<h2>
+    Kontaktirajte <span>nas</span>
+</h2>
+
+<p>
+    Rezervirajte svoj trenutek sprostitve.
+</p>
+
+</div>
+
+<div class="contact-wrapper">
+
+<!-- LEVA STRAN -->
+
+<div class="contact-info">
+
+<h2>
+    Rezervacija<br>
+    <span>termina</span>
+</h2>
+
+<p>
+    Imate vprašanje ali želite rezervirati termin?
+    Izpolnite obrazec in z veseljem vam odgovorim.
+</p>
+
+<div class="contact-detail">
+
+<div class="contact-icon">
+    📍
+</div>
+
+<div>
+    <strong>Lokacija</strong><br>
+    Ribnica, Slovenija
+</div>
+
+</div>
+
+<div class="contact-detail">
+
+<div class="contact-icon">
+    📞
+</div>
+
+<div>
+    <strong>Telefon</strong><br>
+    +386 40 000 000
+</div>
+
+</div>
+
+<div class="contact-detail">
+
+<div class="contact-icon">
+    ✉
+</div>
+
+<div>
+    <strong>E-mail</strong><br>
+    patty.koticek@gmail.com
+</div>
+
+</div>
+
+<p style="margin-top:25px;">
+
+✨ Vsako telo si zasluži trenutek miru,
+sprostitve in časa zase.
+
+</p>
+
+</div>
+
+<!-- DESNA STRAN -->
+
+<div class="contact-form-box">
+
+<h2>
+    Pošljite povpraševanje
+</h2>
+
+<p class="form-subtitle">
+    Sporočite mi, kako vam lahko pomagam.
+</p>
+
+<form id="kontaktForm">
+
+<div class="form-group">
+
+<input
+type="text"
+name="ime"
+placeholder="Ime in priimek"
+autocomplete="name"
+required>
+
+</div>
+
+<div class="form-group">
+
+<input
+type="email"
+name="email"
+placeholder="Vaš e-mail"
+autocomplete="email"
+required>
+
+</div>
+
+<div class="form-group">
+
+<input
+type="tel"
+name="telefon"
+placeholder="Telefonska številka"
+autocomplete="tel">
+
+</div>
+
+<div class="form-group">
+
+<textarea
+name="sporocilo"
+placeholder="Napišite svoje sporočilo..."
+required></textarea>
+
+</div>
+
+<button
+type="submit"
+class="btn"
+id="sendBtn">
+
+Pošlji povpraševanje
+
+</button>
+
+<div id="status"></div>
+
+</form>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+     MAP
+========================= -->
 
 <section>
 
@@ -628,353 +1325,187 @@ Pomaga telesu po fizičnih naporih ter omogoča popoln odklop.
 <div class="title">
 
 <h2>
-Kako poteka <span>obisk?</span>
+    Kje <span>smo</span>
 </h2>
 
-</div>
-
-
-<div class="about">
-
-
-<div class="about-content">
-
 <p>
-Vsaka masaža se začne s kratkim pogovorom, saj želim spoznati vaše želje in potrebe.
-</p>
-
-<p>
-Skupaj se pogovorimo o morebitnih napetostih, občutljivih predelih ter o tem, ali vam bolj ustreza nežnejši ali intenzivnejši pritisk.
-</p>
-
-<p>
-Med masažo se popolnoma prilagodim vam. Pomembno mi je, da se pri meni počutite prijetno in sproščeno.
+    Obiščite nas v Ribnici.
 </p>
 
 </div>
 
-
-<div>
-<img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=900" alt="Masaža">
-</div>
-
-
-</div>
-
-</div>
-
-</section>
-
-
-
-
-
-<section class="pricing" id="pricing">
-
-<div class="container">
-
-<div class="title">
-
-<h2>
-Naš <span>cenik</span>
-</h2>
-
-</div>
-
-
-
-<div class="price-box">
-
-
-
-<div class="price-card">
-
-<h3>
-Relax masaža
-</h3>
-
-<div class="price">
-40€
-</div>
-
-
-<ul>
-
-<li>30 minut</li>
-<li>Aromatična olja</li>
-<li>Sprostitev telesa</li>
-
-</ul>
-
-
-<a href="#contact" class="btn">
-Rezerviraj
-</a>
-
-
-</div>
-
-
-
-
-
-<div class="price-card">
-
-<h3>
-Klasična sprostitvena masaža
-</h3>
-
-
-<div class="price">
-60€
-</div>
-
-
-<ul>
-
-<li>60 minut</li>
-<li>Prilagojena masaža</li>
-<li>Sprostitev mišic</li>
-
-</ul>
-
-
-<a href="#contact" class="btn">
-Rezerviraj
-</a>
-
-
-</div>
-
-
-
-
-
-<div class="price-card">
-
-<h3>
-Premium wellness
-</h3>
-
-
-<div class="price">
-90€
-</div>
-
-
-<ul>
-
-<li>90 minut</li>
-<li>Luksuzni tretma</li>
-<li>Popolna sprostitev</li>
-
-</ul>
-
-
-<a href="#contact" class="btn">
-Rezerviraj
-</a>
-
-
-</div>
-
-
-</div>
-
-</div>
-
-</section>
-
-
-
-
-
-<section id="contact">
-
-
-<div class="container contact">
-
-
-<div class="contact-box">
-
-
-<h2>
-Kontakt
-</h2>
-
-
-<p>
-📍 Ribnica, Slovenija
-</p>
-
-
-<p>
-📞 +386 41 758 938
-</p>
-
-
-<p>
-✉ patty.koticek@gmail.com
-</p>
-
-
-<p style="margin-top:25px;">
-Vsako telo si zasluži trenutek sprostitve. Veselim se, da vam ga lahko podarim – v salonu ali v udobju vašega doma.
-</p>
-
-
-</div>
-
-
-
-
-<div class="contact-box">
-
-
-<form id="kontaktForm">
-
-
-<input 
-type="text"
-name="ime"
-placeholder="Ime in priimek"
-required>
-
-
-<input
-type="email"
-name="email"
-placeholder="Email"
-required>
-
-
-<input
-type="tel"
-name="telefon"
-placeholder="Telefon">
-
-
-<textarea
-name="sporocilo"
-placeholder="Vaše sporočilo"
-required></textarea>
-
-
-<button class="btn" id="sendBtn" type="submit">
-Pošlji
-</button>
-
-
-<p id="status"></p>
-
-
-</form>
-
-
-</div>
-
-
-</div>
-
-
-</section>
-
-
-
-<section class="map">
-
-<div class="container">
-
-
-<div class="title">
-
-<h2>
-Kje <span>smo</span>
-</h2>
-
-</div>
-
+<div class="map-container">
 
 <iframe
-src="https://maps.google.com/maps?q=Ribnica&t=&z=13&output=embed">
+src="https://maps.google.com/maps?q=Ribnica&t=&z=13&output=embed"
+loading="lazy"
+allowfullscreen>
 </iframe>
 
+</div>
 
 </div>
 
 </section>
 
-
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
 
+<div class="container">
+
+<div class="footer-grid">
+
+<div>
+
 <h2>
-Rajski Svet
+    Rajski Svet
 </h2>
 
 <p>
-Masaže in wellness za vaše dobro počutje.
+    Profesionalne masaže in wellness tretmaji
+    za popolno sprostitev telesa in duha.
 </p>
+
+</div>
+
+<div>
+
+<h3>
+    Navigacija
+</h3>
+
+<p><a href="#home">Domov</a></p>
+<p><a href="#about">O meni</a></p>
+<p><a href="#services">Masaže</a></p>
+<p><a href="#pricing">Cenik</a></p>
+<p><a href="#contact">Kontakt</a></p>
+
+</div>
+
+<div>
+
+<h3>
+    Kontakt
+</h3>
+
+<p>📍 Ribnica, Slovenija</p>
+<p>📞 +386 40 000 000</p>
+<p>✉ patty.koticek@gmail.com</p>
+
+</div>
+
+<div>
+
+<h3>
+    Delovni čas
+</h3>
+
+<p>Ponedeljek – Petek</p>
+<p>09:00 – 19:00</p>
+
+<br>
+
+<p>Sobota</p>
+<p>09:00 – 14:00</p>
+
+<br>
+
+<p>Nedelja</p>
+<p>Po dogovoru</p>
+
+</div>
+
+</div>
+
+<div class="footer-bottom">
 
 <p>
-© 2026 Rajski Svet
+    © 2026 Rajski Svet • Vse pravice pridržane.
 </p>
 
+<div class="socials">
+
+<a href="#" aria-label="Facebook">📘</a> <a href="#" aria-label="Instagram">📷</a> <a href="#" aria-label="WhatsApp">💬</a>
+
+</div>
+
+</div>
+
+</div>
+
 </footer>
-  <script>
 
-const form=document.getElementById("kontaktForm");
-const status=document.getElementById("status");
-const btn=document.getElementById("sendBtn");
+<!-- =========================
+     FORM SCRIPT
+========================= -->
 
-form.addEventListener("submit",async function(e){
+<script>
 
-e.preventDefault();
+const form = document.getElementById("kontaktForm");
+const status = document.getElementById("status");
+const btn = document.getElementById("sendBtn");
 
-btn.disabled=true;
-btn.innerHTML="Pošiljam...";
+form.addEventListener("submit", async function(e){
 
-const data=new FormData(form);
+    e.preventDefault();
 
-try{
+    btn.disabled = true;
+    btn.innerHTML = "Pošiljam...";
 
-const response=await fetch("https://formspree.io/f/mvzedvzw",{
+    status.className = "";
+    status.innerHTML = "";
 
-method:"POST",
-body:data,
-headers:{
-"Accept":"application/json"
-}
+    const data = new FormData(form);
 
-});
+    try{
 
+        const response = await fetch(
+            "https://formspree.io/f/mvzedvzw",
+            {
+                method:"POST",
+                body:data,
+                headers:{
+                    "Accept":"application/json"
+                }
+            }
+        );
 
-if(response.ok){
+        if(response.ok){
 
-status.innerHTML="✅ Povpraševanje uspešno poslano.";
-form.reset();
+            status.className = "success-message";
 
-}else{
+            status.innerHTML =
+                "✓ Hvala! Vaše povpraševanje je bilo uspešno poslano.";
 
-status.innerHTML="❌ Napaka pri pošiljanju.";
+            form.reset();
 
-}
+        }else{
 
+            status.className = "error-message";
 
-}catch(error){
+            status.innerHTML =
+                "Pri pošiljanju je prišlo do napake. Poskusite ponovno.";
 
-status.innerHTML="❌ Napaka povezave.";
+        }
 
-}
+    }catch(error){
 
+        status.className = "error-message";
 
-btn.disabled=false;
-btn.innerHTML="Pošlji";
+        status.innerHTML =
+            "Povezava ni uspela. Preverite internetno povezavo.";
+
+    }
+
+    btn.disabled = false;
+    btn.innerHTML = "Pošlji povpraševanje";
 
 });
 
 </script>
-
 
 </body>
 </html>
