@@ -3,978 +3,326 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Rajski Svet | Masaže in Wellness</title>
-
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-scroll-behavior:smooth;
-}
-
-:root{
---background:#F8F4EF;
---section:#F3ECE3;
---primary:#B27A58;
---primary-hover:#9D684A;
---heading:#5C4435;
---text:#6F6258;
---border:#DDD1C2;
---white:#FFFFFF;
---shadow:0 15px 40px rgba(92,68,53,.10);
-}
-
-
-body{
-font-family:Poppins,sans-serif;
-background:var(--background);
-color:var(--text);
-line-height:1.8;
-}
-
-
-h1,h2,h3,h4{
-color:var(--heading);
-}
-
-
-a{
-text-decoration:none;
-color:inherit;
-}
-
-
-img{
-width:100%;
-display:block;
-}
-
-
-.container{
-width:min(1200px,90%);
-margin:auto;
-}
-
-
-section{
-padding:100px 0;
-}
-
-
-/* HEADER */
-
-header{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-z-index:1000;
-background:rgba(248,244,239,.95);
-backdrop-filter:blur(15px);
-border-bottom:1px solid var(--border);
-}
-
-
-nav{
-height:90px;
-display:flex;
-align-items:center;
-justify-content:space-between;
-}
-
-
-.logo{
-font-family:"Cormorant Garamond",serif;
-font-size:38px;
-font-weight:700;
-color:var(--primary);
-}
-
-
-.menu{
-display:flex;
-gap:30px;
-}
-
-
-.menu a{
-font-weight:500;
-color:var(--heading);
-transition:.3s;
-}
-
-
-.menu a:hover{
-color:var(--primary);
-}
-
-
-
-.btn{
-display:inline-block;
-padding:14px 35px;
-border-radius:50px;
-background:var(--primary);
-color:white;
-font-weight:600;
-transition:.3s;
-box-shadow:0 10px 25px rgba(178,122,88,.25);
-}
-
-
-.btn:hover{
-background:var(--primary-hover);
-transform:translateY(-3px);
-}
-
-
-
-/* HERO */
-
-.hero{
-min-height:100vh;
-display:flex;
-align-items:center;
-background:
-linear-gradient(
-rgba(92,68,53,.35),
-rgba(92,68,53,.35)
-),
-url("https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=1800");
-
-background-size:cover;
-background-position:center;
-}
-
-
-.hero-content{
-max-width:700px;
-color:white;
-}
-
-
-.hero small{
-letter-spacing:3px;
-text-transform:uppercase;
-color:white;
-font-size:14px;
-}
-
-
-.hero h1{
-font-family:"Cormorant Garamond",serif;
-font-size:80px;
-line-height:1;
-color:white;
-margin-top:20px;
-}
-
-
-.hero span{
-color:#E9DDCF;
-}
-
-
-.hero p{
-font-size:20px;
-margin:30px 0;
-color:white;
-}
-
-
-.hero-buttons{
-display:flex;
-gap:20px;
-}
-
-
-.btn-outline{
-padding:14px 35px;
-border:2px solid white;
-border-radius:50px;
-color:white;
-}
-
-
-
-/* TITLE */
-
-.title{
-text-align:center;
-margin-bottom:60px;
-}
-
-
-.title h2{
-font-family:"Cormorant Garamond",serif;
-font-size:55px;
-}
-
-
-.title span{
-color:var(--primary);
-}
-
-
-
-/* ABOUT */
-
-.about{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:70px;
-align-items:center;
-}
-
-
-.about img{
-border-radius:30px;
-box-shadow:var(--shadow);
-}
-
-
-.about-content p{
-margin-bottom:20px;
-}
-
-
-
-/* CARDS */
-
-.services{
-background:var(--section);
-}
-
-
-.cards{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:30px;
-}
-
-
-.card{
-background:white;
-padding:40px;
-border-radius:25px;
-border:1px solid var(--border);
-box-shadow:var(--shadow);
-}
-
-
-.card h3{
-font-family:"Cormorant Garamond",serif;
-font-size:32px;
-color:var(--primary);
-margin-bottom:15px;
-}
-
-
-
-/* PRICING */
-
-.pricing{
-background:var(--section);
-}
-
-
-.price-box{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:30px;
-}
-
-
-.price-card{
-background:white;
-padding:40px;
-text-align:center;
-border-radius:25px;
-border:1px solid var(--border);
-box-shadow:var(--shadow);
-display:flex;
-flex-direction:column;
-align-items:center;
-}
-
-
-.price-card h3{
-font-family:"Cormorant Garamond",serif;
-font-size:32px;
-color:var(--primary);
-}
-
-
-.price{
-font-size:50px;
-font-weight:600;
-color:var(--heading);
-margin:20px 0;
-}
-
-
-.price-card ul{
-list-style:none;
-margin-bottom:30px;
-}
-
-
-
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
+:root{--background:#F8F4EF;--section:#F3ECE3;--primary:#B27A58;--primary-hover:#9D684A;--heading:#5C4435;--text:#6F6258;--border:#DDD1C2;--shadow:0 15px 40px rgba(92,68,53,.10)}
+body{font-family:Poppins,sans-serif;background:var(--background);color:var(--text);line-height:1.8}
+h1,h2,h3,h4{color:var(--heading)}
+a{text-decoration:none;color:inherit}
+img{width:100%;display:block}
+.container{width:min(1200px,90%);margin:auto}
+section{padding:90px 0;scroll-margin-top:90px}
+header{position:fixed;top:0;left:0;width:100%;z-index:1000;background:rgba(248,244,239,.95);backdrop-filter:blur(15px);border-bottom:1px solid var(--border)}
+nav{height:90px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:"Cormorant Garamond",serif;font-size:38px;font-weight:700;color:var(--primary)}
+.menu{display:flex;gap:26px}
+.menu a{font-weight:500;color:var(--heading);transition:.3s}
+.menu a:hover{color:var(--primary)}
+.btn{display:inline-block;padding:14px 35px;border:0;border-radius:50px;background:var(--primary);color:#fff;font:600 16px Poppins,sans-serif;cursor:pointer;transition:.3s;box-shadow:0 10px 25px rgba(178,122,88,.25)}
+.btn:hover{background:var(--primary-hover);transform:translateY(-3px)}
+.hero{min-height:100vh;display:flex;align-items:center;background:linear-gradient(rgba(92,68,53,.35),rgba(92,68,53,.35)),url("https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=1800");background-size:cover;background-position:center}
+.hero-content{max-width:700px;color:#fff}
+.hero small{letter-spacing:3px;text-transform:uppercase;font-size:14px}
+.hero h1{font-family:"Cormorant Garamond",serif;font-size:80px;line-height:1;color:#fff;margin-top:20px}
+.hero span{color:#E9DDCF}
+.hero p{font-size:20px;margin:30px 0;color:#fff}
+.hero-buttons{display:flex;gap:20px;flex-wrap:wrap}
+.btn-outline{padding:12px 33px;border:2px solid #fff;border-radius:50px;color:#fff;font-weight:600}
+.title{text-align:center;margin-bottom:50px}
+.title h2{font-family:"Cormorant Garamond",serif;font-size:52px;line-height:1.15}
+.title span{color:var(--primary)}
+.alt{background:var(--section)}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.about img{border-radius:30px;box-shadow:var(--shadow)}
+.about-content p{margin-bottom:20px}
+.cards{display:grid;gap:30px}
+.c4{grid-template-columns:repeat(4,1fr)}
+.c2{grid-template-columns:repeat(2,1fr)}
+.c3{grid-template-columns:repeat(3,1fr)}
+.card{background:#fff;padding:36px;border-radius:25px;border:1px solid var(--border);box-shadow:var(--shadow)}
+.card h3{font-family:"Cormorant Garamond",serif;font-size:30px;color:var(--primary);margin-bottom:12px;line-height:1.2}
+.price-card{background:#fff;padding:40px;text-align:center;border-radius:25px;border:1px solid var(--border);box-shadow:var(--shadow);display:flex;flex-direction:column;align-items:center}
+.price-card h3{font-family:"Cormorant Garamond",serif;font-size:30px;color:var(--primary)}
+.price{font-size:50px;font-weight:600;color:var(--heading);margin:20px 0}
+.price-card ul{list-style:none;margin-bottom:30px}
+.note{text-align:center;margin-top:30px;font-size:15px}
+/* ACCORDION */
+.acc{max-width:850px;margin:0 auto}
+.acc details{background:#fff;border:1px solid var(--border);border-radius:20px;margin-bottom:14px;box-shadow:var(--shadow);overflow:hidden}
+.acc summary{cursor:pointer;list-style:none;padding:22px 28px;font-family:"Cormorant Garamond",serif;font-size:26px;font-weight:600;color:var(--heading);display:flex;justify-content:space-between;align-items:center;gap:20px}
+.acc summary::-webkit-details-marker{display:none}
+.acc summary::after{content:"+";font:300 30px Poppins,sans-serif;color:var(--primary);transition:transform .3s}
+.acc details[open] summary::after{transform:rotate(45deg)}
+.acc summary:focus-visible{outline:2px solid var(--primary);outline-offset:-4px}
+.acc .body{padding:0 28px 26px}
+.acc .body p{margin-bottom:14px}
+.acc ul{list-style:none}
+.acc li{padding-left:30px;position:relative;margin-bottom:8px}
+.acc li::before{content:"🤍";position:absolute;left:0;font-size:14px}
+.faq summary{font-size:22px}
 /* CONTACT */
-
-.contact{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:40px;
-align-items:start;
-}
-
-
-.contact-box{
-background:white;
-padding:40px;
-border-radius:25px;
-box-shadow:var(--shadow);
-}
-
-
-.contact-box h2{
-font-family:"Cormorant Garamond",serif;
-font-size:42px;
-color:var(--primary);
-}
-
-
-.contact-box form{
-display:flex;
-flex-direction:column;
-}
-
-
-input,
-textarea{
-width:100%;
-padding:15px;
-margin-bottom:15px;
-border-radius:15px;
-border:1px solid var(--border);
-font-family:Poppins,sans-serif;
-}
-
-
-textarea{
-height:150px;
-resize:none;
-}
-
-
-/* MAP */
-
-.map iframe{
-width:100%;
-height:400px;
-border:0;
-border-radius:25px;
-}
-
-
-/* FOOTER */
-
-footer{
-background:var(--heading);
-color:white;
-padding:60px 20px;
-text-align:center;
-display:flex;
-flex-direction:column;
-align-items:center;
-justify-content:center;
-}
-
-
-footer h2{
-font-family:"Cormorant Garamond",serif;
-font-size:45px;
-color:white;
-}
-
-
-footer p{
-text-align:center;
-}
-
-
-/* MOBILE */
-
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.contact-box{background:#fff;padding:40px;border-radius:25px;box-shadow:var(--shadow)}
+.contact-box h2{font-family:"Cormorant Garamond",serif;font-size:42px;color:var(--primary)}
+.contact-box form{display:flex;flex-direction:column}
+input,textarea{width:100%;padding:15px;margin-bottom:15px;border-radius:15px;border:1px solid var(--border);font-family:Poppins,sans-serif}
+textarea{height:150px;resize:none}
+.map iframe{width:100%;height:400px;border:0;border-radius:25px}
+footer{background:var(--heading);color:#fff;padding:60px 20px;text-align:center;display:flex;flex-direction:column;align-items:center}
+footer h2{font-family:"Cormorant Garamond",serif;font-size:45px;color:#fff}
 @media(max-width:900px){
-
-.menu{
-display:none;
+.menu{display:none}
+.about,.contact,.c2,.c3,.c4{grid-template-columns:1fr}
+.hero h1{font-size:54px}
+.title h2{font-size:40px}
 }
-
-.about,
-.contact,
-.price-box,
-.cards{
-grid-template-columns:1fr;
-}
-
-
-.hero h1{
-font-size:55px;
-}
-
-}
-
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto;transition:none!important}}
 </style>
-
 </head>
-
 <body>
 
-
 <header>
-
 <nav class="container">
-
-<div class="logo">
-Rajski Svet
-</div>
-
-
+<div class="logo">Rajski Svet</div>
 <div class="menu">
-
 <a href="#home">Domov</a>
-<a href="#services">Storitve</a>
+<a href="#o-meni">O meni</a>
 <a href="#massage">Masaža</a>
+<a href="#lokacija">Salon ali dom</a>
 <a href="#pricing">Cenik</a>
+<a href="#faq">Vprašanja</a>
 <a href="#contact">Kontakt</a>
-
 </div>
-
-
-<a href="#contact" class="btn">
-Rezervacija
-</a>
-
+<a href="#contact" class="btn">Rezervacija</a>
 </nav>
-
 </header>
 
-
-
+<!-- 1. HERO -->
 <section class="hero" id="home">
-
 <div class="container">
-
 <div class="hero-content">
-
-<small>
-Dobrodošli v Rajskem Svetu
-</small>
-
-
-<h1>
-Vaš trenutek
-<span>miru</span>
-</h1>
-
-
-<p>
-Profesionalne masaže in wellness tretmaji za popolno sprostitev telesa in duha.
-</p>
-
-
+<small>Dobrodošli v Rajskem svetu</small>
+<h1>Vaš trenutek <span>miru</span></h1>
+<p>Profesionalne masaže in wellness tretmaji za popolno sprostitev telesa in duha. V salonu ali na vašem domu.</p>
 <div class="hero-buttons">
-
-<a href="#contact" class="btn">
-Rezerviraj termin
-</a>
-
+<a href="#contact" class="btn">Rezerviraj termin</a>
+<a href="#pricing" class="btn-outline">Poglej cenik</a>
 </div>
-
-
 </div>
-
 </div>
-
 </section>
-<section id="massage">
 
+<!-- 2. ZAKAJ IZBRATI + SPUSTNI MENIJI -->
+<section class="alt" id="services">
 <div class="container">
-
-<div class="title">
-<h2>
-Klasična <span>sprostitvena masaža</span>
-</h2>
-<p>
-Posvetite trenutek sebi.
-</p>
+<div class="title"><h2>Zakaj izbrati <span>Rajski svet?</span></h2></div>
+<div class="cards c4">
+<div class="card"><h3>🤍 Prilagojena masaža</h3><p>Vsaka masaža se začne s pogovorom o vaših željah in potrebah.</p></div>
+<div class="card"><h3>🤍 Salon ali dom</h3><p>Sprostitev na način, ki vam najbolj ustreza, tudi brez dodatne vožnje.</p></div>
+<div class="card"><h3>🤍 Kakovostna olja</h3><p>Topel ambient, sproščujoča glasba in mirno vzdušje.</p></div>
+<div class="card"><h3>🤍 Oseben pristop</h3><p>Prisluhnem vam in ustvarim okolje, kjer se počutite sprejeti.</p></div>
 </div>
 
+<div class="title" style="margin-top:80px"><h2>Vse, kar <span>želite vedeti</span></h2></div>
+<div class="acc">
 
+<details>
+<summary>Komu je masaža namenjena?</summary>
+<div class="body">
+<p>Masaža je primerna za vse, ki si želijo:</p>
+<ul>
+<li>zmanjšati napetost v mišicah,</li>
+<li>si vzeti odmor od vsakodnevnega stresa,</li>
+<li>izboljšati svoje počutje,</li>
+<li>se po napornem dnevu sprostiti,</li>
+<li>podariti telesu in umu trenutek pozornosti.</li>
+</ul>
+<p style="margin-top:14px">Ne glede na to, ali vas pestijo napete mišice ali si preprosto želite uro miru zase, ste lepo vabljeni v Rajski svet.</p>
+</div>
+</details>
+
+<details>
+<summary>Zakaj si privoščiti masažo?</summary>
+<div class="body">
+<p>Redna masaža lahko pozitivno vpliva tako na telo kot tudi na splošno počutje.</p>
+<ul>
+<li>sprošča napete in utrujene mišice</li>
+<li>pomaga zmanjšati občutek stresa in napetosti</li>
+<li>izboljša prekrvavitev in sprosti telo</li>
+<li>prispeva k boljšemu počutju in večji lahkotnosti</li>
+<li>spodbuja regeneracijo po fizičnih naporih</li>
+<li>omogoča trenutek popolnega odklopa od vsakodnevnega tempa</li>
+</ul>
+<p style="margin-top:14px">Včasih je že ena ura dovolj, da se ponovno počutimo lahkotneje in z več energije stopimo v nov dan.</p>
+</div>
+</details>
+
+<details>
+<summary>Kako poteka obisk?</summary>
+<div class="body">
+<p>Vsaka masaža se začne s kratkim pogovorom, saj želim spoznati vaše želje in potrebe. Skupaj se pogovorimo o morebitnih napetostih, občutljivih predelih ter o tem, ali vam bolj ustreza nežnejši ali intenzivnejši pritisk.</p>
+<p>Med masažo se popolnoma prilagodim vam. Nekateri ob sproščujoči glasbi radi zaprejo oči in uživajo v tišini, drugi si želijo prijetnega pogovora. Oboje je popolnoma prav – pomembno mi je, da se pri meni počutite prijetno in sproščeno.</p>
+<p>Za prijetno izkušnjo poskrbijo tudi kakovostna masažna olja, topel ambient in umirjeno vzdušje, kjer si lahko brez skrbi vzamete čas zase.</p>
+</div>
+</details>
+
+<details>
+<summary>Masaža v salonu ali na domu?</summary>
+<div class="body">
+<p>Želim, da je sprostitev dostopna na način, ki vam najbolj ustreza. Masažo izvajam v salonu ali po predhodnem dogovoru na vašem domu.</p>
+<p><a href="#lokacija" style="color:var(--primary);font-weight:500">Več o salonu in masaži na domu</a></p>
+</div>
+</details>
+
+</div>
+</div>
+</section>
+
+<!-- 3. O MENI -->
+<section id="o-meni">
+<div class="container">
+<div class="title"><h2>Dobrodošli v <span>Rajskem svetu</span></h2><p>Vaše dobro počutje je moje poslanstvo.</p></div>
 <div class="about">
-
-<div>
-<img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=900" alt="Klasična masaža">
-</div>
-
-
+<div><img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=900" alt="Masaža v Rajskem svetu"></div>
 <div class="about-content">
-
-<p>
-V hitrem tempu življenja pogosto pozabimo prisluhniti svojemu telesu. Dolgotrajno sedenje, stres, fizični napori in vsakodnevne obveznosti se sčasoma pokažejo kot napetost v mišicah, utrujenost ali občutek, da nam je zmanjkalo energije.
-</p>
-
-<p>
-Klasična sprostitvena masaža je priložnost, da se za trenutek ustavite, umirite misli in svojemu telesu podarite nego, ki si jo zasluži.
-</p>
-
-<p>
-Z nežnimi in premišljenimi gibi pomaga sprostiti napete mišice, izboljšati prekrvavitev ter ustvariti občutek lahkotnosti in dobrega počutja.
-</p>
-
-<p>
-Ne gre le za masažo. Gre za čas, ki ga namenite sebi.
-</p>
-
-<a href="#contact" class="btn">
-Rezerviraj termin
-</a>
-
+<p>Sem Patricija, mamica dveh otrok in ustvarjalka Rajskega sveta.</p>
+<p>Hiter tempo življenja me je naučil, kako pomembno je, da se kdaj ustavimo, zadihamo in si vzamemo trenutek samo zase. Tudi sama sem prišla do točke, ko sem spoznala, da brez skrbi zase ne moremo zares skrbeti za druge.</p>
+<p>Prav v masažah sem našla tisti občutek miru, ki sem ga iskala. Vedno me je veselilo delo z ljudmi. Rada prisluhnem, se pogovorim in ustvarim okolje, kjer se človek počuti sprejetega in sproščenega. Verjamem, da včasih prijazna beseda pomeni prav toliko kot sam dotik.</p>
+<p>Želim, da od mene ne odidete le z bolj sproščenimi mišicami, ampak tudi z občutkom lahkotnosti, miru in nove energije.</p>
+<details style="margin-bottom:20px">
+<summary style="cursor:pointer;color:var(--primary);font-weight:500">Preberite več o moji poti</summary>
+<p style="margin-top:14px">Ko sem izvedla svojo prvo masažo in prejela prve iskrene pohvale, sem vedela, da je to pot, po kateri želim hoditi. Še danes je moj najlepši občutek, ko stranka po masaži vstane z nasmehom in reče: »Počutim se prerojeno. Vesela sem, da sem si vzela ta trenutek zase.«</p>
+<p>Rajski svet zame ni le ime. Predstavlja občutek, da za kratek čas pozabimo na hiter tempo življenja, umirimo misli, sprostimo telo in preprosto uživamo v trenutku.</p>
+<p>Danes vas razvajam z masažami, v prihodnosti pa želim Rajski svet razvijati tudi z nego obraza in drugimi storitvami dobrega počutja. Verjamem v naraven pristop, saj se prava lepota začne takrat, ko se dobro počutimo v svoji koži.</p>
+</details>
+<a href="#contact" class="btn">Rezerviraj termin</a>
 </div>
-
 </div>
-
 </div>
-
 </section>
 
-
-
-<section class="services" id="services">
-
+<!-- 4. KLASIČNA MASAŽA -->
+<section class="alt" id="massage">
 <div class="container">
-
-<div class="title">
-
-<h2>
-Zakaj si <span>privoščiti masažo?</span>
-</h2>
-
-</div>
-
-
-<div class="cards">
-
-
-<div class="card">
-
-<h3>
-🤍 Sprostitev mišic
-</h3>
-
-<p>
-Sprošča napete in utrujene mišice ter pomaga zmanjšati občutek stresa in napetosti.
-</p>
-
-</div>
-
-
-<div class="card">
-
-<h3>
-🤍 Boljše počutje
-</h3>
-
-<p>
-Izboljša prekrvavitev, sprosti telo in ustvari občutek lahkotnosti.
-</p>
-
-</div>
-
-
-<div class="card">
-
-<h3>
-🤍 Regeneracija
-</h3>
-
-<p>
-Pomaga telesu po fizičnih naporih ter omogoča popoln odklop.
-</p>
-
-</div>
-
-
-</div>
-
-</div>
-
-</section>
-
-
-
-
-<section>
-
-<div class="container">
-
-<div class="title">
-
-<h2>
-Kako poteka <span>obisk?</span>
-</h2>
-
-</div>
-
-
+<div class="title"><h2>Klasična <span>sprostitvena masaža</span></h2><p>Posvetite trenutek sebi.</p></div>
 <div class="about">
-
-
+<div><img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=900" alt="Klasična masaža"></div>
 <div class="about-content">
-
-<p>
-Vsaka masaža se začne s kratkim pogovorom, saj želim spoznati vaše želje in potrebe.
-</p>
-
-<p>
-Skupaj se pogovorimo o morebitnih napetostih, občutljivih predelih ter o tem, ali vam bolj ustreza nežnejši ali intenzivnejši pritisk.
-</p>
-
-<p>
-Med masažo se popolnoma prilagodim vam. Pomembno mi je, da se pri meni počutite prijetno in sproščeno.
-</p>
-
+<p>V hitrem tempu življenja pogosto pozabimo prisluhniti svojemu telesu. Dolgotrajno sedenje, stres, fizični napori in vsakodnevne obveznosti se sčasoma pokažejo kot napetost v mišicah, utrujenost ali občutek, da nam je zmanjkalo energije.</p>
+<p>Klasična sprostitvena masaža je priložnost, da se za trenutek ustavite, umirite misli in svojemu telesu podarite nego, ki si jo zasluži. Z nežnimi in premišljenimi gibi pomaga sprostiti napete mišice, izboljšati prekrvavitev ter ustvariti občutek lahkotnosti in dobrega počutja.</p>
+<p>Ne gre le za masažo. Gre za čas, ki ga namenite sebi.</p>
+<a href="#contact" class="btn">Rezerviraj termin</a>
 </div>
-
-
-<div>
-<img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=900" alt="Masaža">
 </div>
-
-
 </div>
-
-</div>
-
 </section>
 
-
-
-
-
-<section class="pricing" id="pricing">
-
+<!-- 5. SALON ALI DOM -->
+<section id="lokacija">
 <div class="container">
-
-<div class="title">
-
-<h2>
-Naš <span>cenik</span>
-</h2>
-
+<div class="title"><h2>Masaža v salonu <span>ali na domu</span></h2><p>Želim, da je sprostitev dostopna na način, ki vam najbolj ustreza.</p></div>
+<div class="cards c2">
+<div class="card">
+<h3>V salonu</h3>
+<p>V prijetnem in umirjenem ambientu vas pričaka prostor, namenjen sprostitvi. Tukaj lahko za nekaj časa odložite vsakodnevne skrbi, se prepustite razvajanju in uživate v mirnem okolju.</p>
 </div>
-
-
-
-<div class="price-box">
-
-
-
-<div class="price-card">
-
-<h3>
-Relax masaža
-</h3>
-
-<div class="price">
-40€
+<div class="card">
+<h3>Na domu</h3>
+<p>Če vam je ljubše udobje doma ali si želite sprostitve brez dodatne vožnje, masažo po predhodnem dogovoru izvajam tudi na vašem domu. Poskrbim za vse potrebno, vi pa si preprosto vzamete čas zase.</p>
 </div>
-
-
-<ul>
-
-<li>30 minut</li>
-<li>Aromatična olja</li>
-<li>Sprostitev telesa</li>
-
-</ul>
-
-
-<a href="#contact" class="btn">
-Rezerviraj
-</a>
-
-
 </div>
-
-
-
-
-
-<div class="price-card">
-
-<h3>
-Klasična sprostitvena masaža
-</h3>
-
-
-<div class="price">
-60€
+<p class="note">Zaključek: vsako telo si zasluži trenutek sprostitve. Veselim se, da vam ga lahko podarim – v salonu ali v udobju vašega doma.</p>
 </div>
-
-
-<ul>
-
-<li>60 minut</li>
-<li>Prilagojena masaža</li>
-<li>Sprostitev mišic</li>
-
-</ul>
-
-
-<a href="#contact" class="btn">
-Rezerviraj
-</a>
-
-
-</div>
-
-
-
-
-
-<div class="price-card">
-
-<h3>
-Premium wellness
-</h3>
-
-
-<div class="price">
-90€
-</div>
-
-
-<ul>
-
-<li>90 minut</li>
-<li>Luksuzni tretma</li>
-<li>Popolna sprostitev</li>
-
-</ul>
-
-
-<a href="#contact" class="btn">
-Rezerviraj
-</a>
-
-
-</div>
-
-
-</div>
-
-</div>
-
 </section>
 
+<!-- 6. CENIK -->
+<section class="alt" id="pricing">
+<div class="container">
+<div class="title"><h2>Naš <span>cenik</span></h2></div>
+<div class="cards c3">
+<div class="price-card"><h3>Relax masaža</h3><div class="price">40€</div>
+<ul><li>30 minut</li><li>Aromatična olja</li><li>Sprostitev telesa</li></ul>
+<a href="#contact" class="btn">Rezerviraj</a></div>
+<div class="price-card"><h3>Klasična sprostitvena masaža</h3><div class="price">60€</div>
+<ul><li>60 minut</li><li>Prilagojena masaža</li><li>Sprostitev mišic</li></ul>
+<a href="#contact" class="btn">Rezerviraj</a></div>
+<div class="price-card"><h3>Premium wellness</h3><div class="price">90€</div>
+<ul><li>90 minut</li><li>Luksuzni tretma</li><li>Popolna sprostitev</li></ul>
+<a href="#contact" class="btn">Rezerviraj</a></div>
+</div>
+<p class="note">Masaža je možna v salonu ali po dogovoru na vašem domu.</p>
+</div>
+</section>
 
+<!-- 7. FAQ -->
+<section id="faq">
+<div class="container">
+<div class="title"><h2>Pogosta <span>vprašanja</span></h2></div>
+<div class="acc faq">
+<details><summary>Kako se pripravim na masažo?</summary><div class="body"><p>Posebne priprave niso potrebne. Pridite spočiti in v udobnih oblačilih, vse ostalo uredimo skupaj. Pred masažo se na kratko pogovoriva o vaših željah in morebitnih težavah.</p></div></details>
+<details><summary>Ali potrebujem svojo brisačo?</summary><div class="body"><p>Ne, za vse potrebno poskrbim jaz. Vam je dovolj, da pridete.</p></div></details>
+<details><summary>Ali lahko pridem po službi?</summary><div class="body"><p>Seveda. Termin se dogovoriva glede na vaš urnik, zato se mi oglasite in skupaj poiščeva čas, ki vam najbolj ustreza.</p></div></details>
+<details><summary>Ali masažo izvajate tudi na domu?</summary><div class="body"><p>Da, po predhodnem dogovoru pridem tudi k vam domov.</p></div></details>
+<details><summary>Kako rezerviram termin?</summary><div class="body"><p>Izpolnite obrazec spodaj, pokličite ali pišite na e-pošto. Odgovorim vam čim prej.</p></div></details>
+</div>
+</div>
+</section>
 
-
-
-<section id="contact">
-
-
+<!-- 8. KONTAKT -->
+<section class="alt" id="contact">
 <div class="container contact">
-
-
 <div class="contact-box">
-
-
-<h2>
-Kontakt
-</h2>
-
-
-<p>
-📍 Ribnica, Slovenija
-</p>
-
-
-<p>
-📞 +386 41 758 938
-</p>
-
-
-<p>
-✉ patty.koticek@gmail.com
-</p>
-
-
-<p style="margin-top:25px;">
-Vsako telo si zasluži trenutek sprostitve. Veselim se, da vam ga lahko podarim – v salonu ali v udobju vašega doma.
-</p>
-
-
+<h2>Kontakt</h2>
+<p>📍 Ribnica, Slovenija</p>
+<p>📞 +386 41 758 938</p>
+<p>✉ patty.koticek@gmail.com</p>
+<p style="margin-top:25px">Vsako telo si zasluži trenutek sprostitve. Veselim se, da vam ga lahko podarim – v salonu ali v udobju vašega doma.</p>
 </div>
-
-
-
-
 <div class="contact-box">
-
-
 <form id="kontaktForm">
-
-
-<input 
-type="text"
-name="ime"
-placeholder="Ime in priimek"
-required>
-
-
-<input
-type="email"
-name="email"
-placeholder="Email"
-required>
-
-
-<input
-type="tel"
-name="telefon"
-placeholder="Telefon">
-
-
-<textarea
-name="sporocilo"
-placeholder="Vaše sporočilo"
-required></textarea>
-
-
-<button class="btn" id="sendBtn" type="submit">
-Pošlji
-</button>
-
-
-<p id="status"></p>
-
-
+<input type="text" name="ime" placeholder="Ime in priimek" required>
+<input type="email" name="email" placeholder="Email" required>
+<input type="tel" name="telefon" placeholder="Telefon">
+<textarea name="sporocilo" placeholder="Vaše sporočilo (npr. želena masaža, salon ali dom)" required></textarea>
+<button class="btn" id="sendBtn" type="submit">Pošlji</button>
+<p id="status" role="status"></p>
 </form>
-
-
 </div>
-
-
 </div>
-
-
 </section>
 
-
-
-<section class="map">
-
+<!-- 9. ZEMLJEVID -->
+<section class="map" id="zemljevid">
 <div class="container">
-
-
-<div class="title">
-
-<h2>
-Kje <span>smo</span>
-</h2>
-
+<div class="title"><h2>Kje <span>smo</span></h2></div>
+<iframe title="Zemljevid Ribnica" src="https://maps.google.com/maps?q=Ribnica&t=&z=13&output=embed" loading="lazy"></iframe>
 </div>
-
-
-<iframe
-src="https://maps.google.com/maps?q=Ribnica&t=&z=13&output=embed">
-</iframe>
-
-
-</div>
-
 </section>
-
-
 
 <footer>
-
-<h2>
-Rajski Svet
-</h2>
-
-<p>
-Masaže in wellness za vaše dobro počutje.
-</p>
-
-<p>
-© 2026 Rajski Svet
-</p>
-
+<h2>Rajski Svet</h2>
+<p>Masaže in wellness za vaše dobro počutje.</p>
+<p>© 2026 Rajski Svet</p>
 </footer>
-  <script>
 
+<script>
 const form=document.getElementById("kontaktForm");
-const status=document.getElementById("status");
+const statusEl=document.getElementById("status");
 const btn=document.getElementById("sendBtn");
-
 form.addEventListener("submit",async function(e){
-
 e.preventDefault();
-
 btn.disabled=true;
 btn.innerHTML="Pošiljam...";
-
-const data=new FormData(form);
-
 try{
-
-const response=await fetch("https://formspree.io/f/mvzedvzw",{
-
-method:"POST",
-body:data,
-headers:{
-"Accept":"application/json"
-}
-
-});
-
-
-if(response.ok){
-
-status.innerHTML="✅ Povpraševanje uspešno poslano.";
-form.reset();
-
-}else{
-
-status.innerHTML="❌ Napaka pri pošiljanju.";
-
-}
-
-
-}catch(error){
-
-status.innerHTML="❌ Napaka povezave.";
-
-}
-
-
+const response=await fetch("https://formspree.io/f/mvzedvzw",{method:"POST",body:new FormData(form),headers:{"Accept":"application/json"}});
+if(response.ok){statusEl.innerHTML="✅ Povpraševanje uspešno poslano.";form.reset();}
+else{statusEl.innerHTML="❌ Napaka pri pošiljanju.";}
+}catch(error){statusEl.innerHTML="❌ Napaka povezave.";}
 btn.disabled=false;
 btn.innerHTML="Pošlji";
-
 });
-
 </script>
-
-
 </body>
 </html>
