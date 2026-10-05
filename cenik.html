@@ -1,37 +1,112 @@
-<section id="cenik" class="cenik">
-  <h2>Cenik</h2>
-  <p class="cenik-uvod">Izberite trajanje masaže, ki vam najbolj ustreza.</p>
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cenik | Rajski Svet</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
+:root{--background:#F8F4EF;--section:#F3ECE3;--primary:#B27A58;--primary-hover:#9D684A;--heading:#5C4435;--text:#6F6258;--border:#DDD1C2;--shadow:0 15px 40px rgba(92,68,53,.10)}
+body{font-family:Poppins,sans-serif;background:var(--background);color:var(--text);line-height:1.8}
+h1,h2,h3,h4{color:var(--heading)}
+a{text-decoration:none;color:inherit}
+img{width:100%;display:block}
+.container{width:min(1200px,90%);margin:auto}
+section{padding:90px 0;scroll-margin-top:90px}
+header{position:fixed;top:0;left:0;width:100%;z-index:1000;background:rgba(248,244,239,.95);backdrop-filter:blur(15px);border-bottom:1px solid var(--border)}
+nav{height:90px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:"Cormorant Garamond",serif;font-size:38px;font-weight:700;color:var(--primary)}
+.menu{display:flex;gap:26px}
+.menu a{font-weight:500;color:var(--heading);transition:.3s}
+.menu a:hover,.menu a.active{color:var(--primary)}
+.btn{display:inline-block;padding:14px 35px;border:0;border-radius:50px;background:var(--primary);color:#fff;font:600 16px Poppins,sans-serif;cursor:pointer;transition:.3s;box-shadow:0 10px 25px rgba(178,122,88,.25)}
+.btn:hover{background:var(--primary-hover);transform:translateY(-3px)}
+.page-hero{min-height:50vh;display:flex;align-items:center;padding:140px 0 70px;background:linear-gradient(rgba(92,68,53,.35),rgba(92,68,53,.35)),url("https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=1800");background-size:cover;background-position:center}
+.page-hero .container{color:#fff}
+.page-hero small{letter-spacing:3px;text-transform:uppercase;font-size:14px}
+.page-hero h1{font-family:"Cormorant Garamond",serif;font-size:72px;line-height:1;color:#fff;margin-top:20px}
+.page-hero p{font-size:20px;margin-top:20px;color:#fff;max-width:600px}
+.title{text-align:center;margin-bottom:50px}
+.title h2{font-family:"Cormorant Garamond",serif;font-size:52px;line-height:1.15}
+.title span{color:var(--primary)}
+.alt{background:var(--section)}
+.cards{display:grid;gap:30px}
+.c3{grid-template-columns:repeat(3,1fr)}
+.price-card{background:#fff;padding:40px;text-align:center;border-radius:25px;border:1px solid var(--border);box-shadow:var(--shadow);display:flex;flex-direction:column;align-items:center}
+.price-card h3{font-family:"Cormorant Garamond",serif;font-size:30px;color:var(--primary)}
+.price{font-size:50px;font-weight:600;color:var(--heading);margin:20px 0}
+.price-card ul{list-style:none;margin-bottom:30px}
+.note{text-align:center;margin-top:30px;font-size:15px}
+footer{background:var(--heading);color:#fff;padding:60px 20px;text-align:center;display:flex;flex-direction:column;align-items:center}
+footer h2{font-family:"Cormorant Garamond",serif;font-size:45px;color:#fff}
+@media(max-width:900px){
+.menu{display:none}
+.c3{grid-template-columns:1fr}
+.page-hero h1{font-size:50px}
+.title h2{font-size:40px}
+}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto;transition:none!important}}
+</style>
+</head>
+<body>
 
-  <div class="cenik-grid">
-    <div class="cenik-kartica">
-      <h3>V salonu</h3>
-      <ul>
-        <li><span>Klasična sprostitvena masaža, 30 min</span><strong>XX €</strong></li>
-        <li><span>Klasična sprostitvena masaža, 60 min</span><strong>XX €</strong></li>
-        <li><span>Klasična sprostitvena masaža, 90 min</span><strong>XX €</strong></li>
-      </ul>
-    </div>
+<header>
+<nav class="container">
+<a href="index.html" class="logo">Rajski Svet</a>
+<div class="menu">
+<a href="index.html#home">Domov</a>
+<a href="index.html#o-meni">O meni</a>
+<a href="index.html#massage">Masaža</a>
+<a href="index.html#lokacija">Salon ali dom</a>
+<a href="cenik.html" class="active">Cenik</a>
+<a href="index.html#faq">Vprašanja</a>
+<a href="index.html#contact">Kontakt</a>
+</div>
+<a href="index.html#contact" class="btn">Rezervacija</a>
+</nav>
+</header>
 
-    <div class="cenik-kartica">
-      <h3>Na domu</h3>
-      <ul>
-        <li><span>Klasična sprostitvena masaža, 60 min</span><strong>XX €</strong></li>
-        <li><span>Klasična sprostitvena masaža, 90 min</span><strong>XX €</strong></li>
-        <li><span>Prihod na dom</span><strong>XX €</strong></li>
-      </ul>
-    </div>
-  </div>
-
-  <p class="cenik-opomba">Za termin me kontaktirajte preko obrazca spodaj.</p>
+<section class="page-hero">
+<div class="container">
+<small>Rajski svet</small>
+<h1>Cenik</h1>
+<p>Izberite trajanje masaže, ki vam najbolj ustreza.</p>
+</div>
 </section>
 
-<style>
-  .cenik { max-width: 900px; margin: 0 auto; padding: 3rem 1.25rem; }
-  .cenik h2 { text-align: center; margin-bottom: .5rem; }
-  .cenik-uvod, .cenik-opomba { text-align: center; opacity: .8; }
-  .cenik-grid { display: grid; gap: 1.5rem; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin: 2rem 0; }
-  .cenik-kartica { border: 1px solid rgba(0,0,0,.12); border-radius: 12px; padding: 1.5rem; }
-  .cenik-kartica ul { list-style: none; padding: 0; margin: 0; }
-  .cenik-kartica li { display: flex; justify-content: space-between; gap: 1rem; padding: .75rem 0; border-bottom: 1px solid rgba(0,0,0,.08); }
-  .cenik-kartica li:last-child { border-bottom: none; }
-</style>
+<section class="alt">
+<div class="container">
+<div class="title"><h2>Klasična <span>sprostitvena masaža</span></h2></div>
+<div class="cards c3">
+<div class="price-card">
+<h3>30 minut</h3>
+<div class="price">XX €</div>
+<ul><li>Kratka sprostitev</li></ul>
+<a href="index.html#contact" class="btn">Rezerviraj</a>
+</div>
+<div class="price-card">
+<h3>60 minut</h3>
+<div class="price">XX €</div>
+<ul><li>Celostna sprostitev telesa</li></ul>
+<a href="index.html#contact" class="btn">Rezerviraj</a>
+</div>
+<div class="price-card">
+<h3>90 minut</h3>
+<div class="price">XX €</div>
+<ul><li>Podaljšana, globoka sprostitev</li></ul>
+<a href="index.html#contact" class="btn">Rezerviraj</a>
+</div>
+</div>
+<p class="note">Masažo izvajam v salonu ali po predhodnem dogovoru na vašem domu.</p>
+</div>
+</section>
+
+<footer>
+<h2>Rajski Svet</h2>
+<p>Masaže in wellness za vaše dobro počutje.</p>
+<p>© 2026 Rajski Svet</p>
+</footer>
+
+</body>
+</html>
