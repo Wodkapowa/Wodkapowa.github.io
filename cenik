@@ -1,0 +1,37 @@
+<section id="cenik" class="cenik">
+  <h2>Cenik</h2>
+  <p class="cenik-uvod">Izberite trajanje masaže, ki vam najbolj ustreza.</p>
+
+  <div class="cenik-grid">
+    <div class="cenik-kartica">
+      <h3>V salonu</h3>
+      <ul>
+        <li><span>Klasična sprostitvena masaža, 30 min</span><strong>XX €</strong></li>
+        <li><span>Klasična sprostitvena masaža, 60 min</span><strong>XX €</strong></li>
+        <li><span>Klasična sprostitvena masaža, 90 min</span><strong>XX €</strong></li>
+      </ul>
+    </div>
+
+    <div class="cenik-kartica">
+      <h3>Na domu</h3>
+      <ul>
+        <li><span>Klasična sprostitvena masaža, 60 min</span><strong>XX €</strong></li>
+        <li><span>Klasična sprostitvena masaža, 90 min</span><strong>XX €</strong></li>
+        <li><span>Prihod na dom</span><strong>XX €</strong></li>
+      </ul>
+    </div>
+  </div>
+
+  <p class="cenik-opomba">Za termin me kontaktirajte preko obrazca spodaj.</p>
+</section>
+
+<style>
+  .cenik { max-width: 900px; margin: 0 auto; padding: 3rem 1.25rem; }
+  .cenik h2 { text-align: center; margin-bottom: .5rem; }
+  .cenik-uvod, .cenik-opomba { text-align: center; opacity: .8; }
+  .cenik-grid { display: grid; gap: 1.5rem; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin: 2rem 0; }
+  .cenik-kartica { border: 1px solid rgba(0,0,0,.12); border-radius: 12px; padding: 1.5rem; }
+  .cenik-kartica ul { list-style: none; padding: 0; margin: 0; }
+  .cenik-kartica li { display: flex; justify-content: space-between; gap: 1rem; padding: .75rem 0; border-bottom: 1px solid rgba(0,0,0,.08); }
+  .cenik-kartica li:last-child { border-bottom: none; }
+</style>
