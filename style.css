@@ -77,3 +77,16 @@ footer h2{font-family:"Cormorant Garamond",serif;font-size:45px;color:#fff}
 .title h2{font-size:40px}
 }
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto;transition:none!important}}
+
+.logo {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo-img {
+    display: block;
+    width: 160px;
+    height: auto;
+    object-fit: contain;
+}
