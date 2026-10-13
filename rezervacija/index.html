@@ -1,0 +1,708 @@
+
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rezervacija | Rajski Svet</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --background: #F8F4EF;
+  --section: #F3ECE3;
+  --primary: #B27A58;
+  --hover: #9D684A;
+  --heading: #5C4435;
+  --text: #6F6258;
+  --border: #DDD1C2;
+  --white: #FFFFFF;
+  --shadow: 0 15px 40px rgba(92,68,53,.10);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--background);
+  color: var(--text);
+  line-height: 1.7;
+}
+button, input, select { font: inherit; }
+a { text-decoration: none; color: inherit; }
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(248,244,239,.96);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+}
+nav {
+  min-height: 82px;
+  width: min(1100px, 92%);
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.logo {
+  font: 700 36px 'Cormorant Garamond', serif;
+  color: var(--primary);
+}
+.back { color: var(--heading); font-size: 14px; }
+
+.hero { text-align: center; padding: 65px 20px 35px; }
+.eyebrow {
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 12px;
+  font-weight: 500;
+}
+h1, h2, h3 {
+  font-family: 'Cormorant Garamond', serif;
+  color: var(--heading);
+  line-height: 1.2;
+}
+h1 { font-size: clamp(42px, 6vw, 64px); margin: 12px 0; }
+.hero p { max-width: 600px; margin: auto; font-size: 15px; }
+
+.container {
+  width: min(1050px, 92%);
+  margin: 0 auto 80px;
+}
+.panel {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 25px;
+  padding: clamp(22px, 4vw, 40px);
+  box-shadow: var(--shadow);
+  margin-bottom: 25px;
+  scroll-margin-top: 100px;
+}
+.step-title {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+.number {
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--section);
+  color: var(--primary);
+  font-weight: 600;
+}
+.step-title h2 { font-size: 31px; }
+
+.locations {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+.location {
+  text-align: left;
+  background: #FFFCF9;
+  border: 2px solid var(--border);
+  border-radius: 20px;
+  padding: 25px;
+  cursor: pointer;
+  color: var(--text);
+  transition: .2s;
+}
+.location:hover { border-color: var(--primary); transform: translateY(-2px); }
+.location.active { border-color: var(--primary); background: #F8F0E8; }
+.location .pin { font-size: 25px; }
+.location h3 { font-size: 29px; margin: 7px 0; }
+.location p { font-size: 13px; }
+.location .choose {
+  display: inline-block;
+  margin-top: 14px;
+  color: var(--primary);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+#calendarSection, #formSection { display: none; }
+#calendarSection.visible, #formSection.visible { display: block; }
+
+.selected-location {
+  display: inline-block;
+  color: var(--primary);
+  background: var(--section);
+  padding: 6px 14px;
+  border-radius: 30px;
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+
+.calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+.calendar-header h3 { font-size: 32px; text-align: center; }
+.month-btn {
+  border: 1px solid var(--border);
+  background: var(--background);
+  color: var(--heading);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 25px;
+}
+.month-btn:disabled { opacity: .35; cursor: not-allowed; }
+
+.weekdays, .days {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  column-gap: 8px;
+  row-gap: 14px;
+}
+.weekdays {
+  margin-bottom: 16px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--primary);
+}
+.day {
+  width: min(100%, 76px);
+  aspect-ratio: 1;
+  justify-self: center;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 1px solid #E8D9CA;
+  border-radius: 16px;
+  background: #F8F0E8;
+  color: var(--heading);
+  font-size: 19px;
+  font-weight: 500;
+  box-shadow: 0 3px 8px rgba(92,68,53,.06);
+  cursor: pointer;
+}
+.day:hover:not(:disabled) { background: #EBD8C7; border-color: var(--primary); }
+.day.selected { background: var(--primary); color: white; border-color: var(--primary); }
+.day:disabled {
+  background: #F0ECE7;
+  color: #C5BBB1;
+  border-color: transparent;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+.day.today { border: 2px solid var(--primary); font-weight: 700; }
+
+.day:focus-visible, .location:focus-visible,
+.month-btn:focus-visible, .btn:focus-visible {
+  outline: 2px solid var(--heading);
+  outline-offset: 3px;
+}
+
+.legend { font-size: 12px; margin-top: 18px; }
+.hint {
+  margin-top: 20px;
+  padding: 15px;
+  background: var(--section);
+  border-radius: 13px;
+  font-size: 13px;
+}
+
+.field { margin-bottom: 18px; }
+.field label {
+  display: block;
+  color: var(--heading);
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 7px;
+}
+.field input, .field select {
+  width: 100%;
+  min-height: 51px;
+  padding: 12px 15px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: #FFFCF9;
+  color: var(--heading);
+  outline: none;
+}
+.field input:focus, .field select:focus { border-color: var(--primary); }
+.grid-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+.summary {
+  background: var(--section);
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 24px;
+}
+.summary h3 { font-size: 25px; margin-bottom: 10px; }
+.summary p { font-size: 14px; margin: 4px 0; }
+
+.btn {
+  display: inline-block;
+  width: 100%;
+  border: 0;
+  border-radius: 40px;
+  background: var(--primary);
+  color: white;
+  padding: 15px 22px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.btn:hover { background: var(--hover); }
+.btn:disabled { opacity: .6; cursor: wait; }
+.change {
+  border: 0;
+  background: none;
+  color: var(--primary);
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 13px;
+  margin-top: 12px;
+}
+.status { margin-top: 16px; font-size: 14px; overflow-wrap: anywhere; }
+
+footer {
+  text-align: center;
+  background: var(--heading);
+  color: white;
+  padding: 35px 20px;
+}
+footer h2 { font-size: 36px; color: white; }
+footer p { font-size: 13px; }
+
+@media (max-width: 600px) {
+  nav { min-height: 72px; }
+  .logo { font-size: 30px; }
+  .back { font-size: 12px; }
+  .locations, .grid-fields { grid-template-columns: 1fr; }
+  .panel { border-radius: 19px; }
+  .step-title h2 { font-size: 26px; }
+  .day { width: min(100%, 44px); border-radius: 10px; font-size: 14px; }
+  .weekdays, .days { column-gap: 3px; row-gap: 9px; }
+  .weekdays { font-size: 10px; }
+  .calendar-header h3 { font-size: 25px; }
+  .month-btn { width: 34px; height: 34px; font-size: 20px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; }
+}
+</style>
+</head>
+
+<body>
+<header>
+  <nav>
+    <a class="logo" href="index.html">Rajski Svet</a>
+    <a class="back" href="index.html">← Nazaj na domačo stran</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <div class="eyebrow">Čas zase 🤍</div>
+  <h1>Rezervacija termina</h1>
+  <p>Izberite lokacijo, datum in želeni čas masaže. Veselim se vašega obiska v Rajskem svetu.</p>
+</div>
+
+<main class="container">
+  <section class="panel" id="locationSection">
+    <div class="step-title">
+      <div class="number">1</div>
+      <h2>Izberite lokacijo</h2>
+    </div>
+
+    <div class="locations">
+      <button class="location" type="button"
+        data-location="Ribnica"
+        data-address="Kolodvorska ulica 9, Ribnica"
+        aria-pressed="false">
+        <div class="pin">📍</div>
+        <h3>Ribnica</h3>
+        <p>Kolodvorska ulica 9</p>
+        <span class="choose">Izberi željeni termin →</span>
+      </button>
+
+      <button class="location" type="button"
+        data-location="Škofljica"
+        data-address="Ob potoku 43, Škofljica"
+        aria-pressed="false">
+        <div class="pin">📍</div>
+        <h3>Škofljica</h3>
+        <p>Ob potoku 43</p>
+        <span class="choose">Izberi željeni termin →</span>
+      </button>
+    </div>
+  </section>
+
+  <section class="panel" id="calendarSection">
+    <div class="step-title">
+      <div class="number">2</div>
+      <h2>Izberite datum</h2>
+    </div>
+
+    <div id="locationBadge" class="selected-location"></div>
+
+    <div class="calendar-header">
+      <button type="button" class="month-btn" id="prevMonth" aria-label="Prejšnji mesec">‹</button>
+      <h3 id="monthTitle" aria-live="polite"></h3>
+      <button type="button" class="month-btn" id="nextMonth" aria-label="Naslednji mesec">›</button>
+    </div>
+
+    <div class="weekdays">
+      <div>PON</div><div>TOR</div><div>SRE</div><div>ČET</div>
+      <div>PET</div><div>SOB</div><div>NED</div>
+    </div>
+    <div class="days" id="calendarDays"></div>
+
+    <p class="legend">Izbirate lahko datume, ki ustrezajo delovnim dnevom izbrane lokacije.</p>
+    <div class="hint">🤍 Masaža traja 60 minut, nato je predvidenih še 20 minut za pripravo. Izbira termina še ne pomeni potrjene rezervacije.</div>
+  </section>
+
+  <section class="panel" id="formSection">
+    <div class="step-title">
+      <div class="number">3</div>
+      <h2>Vaša rezervacija</h2>
+    </div>
+
+    <div class="summary">
+      <h3>Izbrani termin</h3>
+      <p>📍 <strong id="summaryLocation"></strong></p>
+      <p>📅 <strong id="summaryDate"></strong></p>
+      <p>🕒 <strong id="summaryTime">Čas še ni izbran</strong></p>
+      <button class="change" type="button" id="changeDate">Spremeni lokacijo ali datum</button>
+    </div>
+
+    <form id="bookingForm">
+      <div class="grid-fields">
+        <div class="field">
+          <label for="name">Ime in priimek *</label>
+          <input id="name" name="ime" autocomplete="name" required>
+        </div>
+        <div class="field">
+          <label for="phone">Telefonska številka *</label>
+          <input id="phone" name="telefon" type="tel" autocomplete="tel" required>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="email">E-pošta *</label>
+        <input id="email" name="email" type="email" autocomplete="email" required>
+      </div>
+
+      <div class="field">
+        <label for="massage">Vrsta masaže *</label>
+        <select id="massage" name="vrsta_masaze" required>
+          <option value="">Izberite masažo</option>
+          <option value="Klasična sprostitvena masaža">Klasična sprostitvena masaža</option>
+          <option value="Drugo / po dogovoru">Drugo / po dogovoru</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="time">Želeni čas *</label>
+        <select id="time" name="zeleni_cas" required>
+          <option value="">Najprej izberite datum</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="message">Dodatne želje (neobvezno)</label>
+        <input id="message" name="sporocilo" placeholder="Npr. posebne želje">
+      </div>
+
+      <input type="hidden" id="chosenLocation" name="lokacija">
+      <input type="hidden" id="chosenDate" name="datum">
+
+      <button class="btn" id="submitBtn" type="submit">Pošlji povpraševanje za termin</button>
+      <p class="status" id="status" role="status" aria-live="polite"></p>
+    </form>
+  </section>
+</main>
+
+<footer>
+  <h2>Rajski Svet</h2>
+  <p>Masaže in wellness za vaše dobro počutje.</p>
+  <p>© 2026 Rajski Svet</p>
+</footer>
+
+<script>
+const locationButtons = document.querySelectorAll(".location");
+const locationSection = document.getElementById("locationSection");
+const calendarSection = document.getElementById("calendarSection");
+const formSection = document.getElementById("formSection");
+const calendarDays = document.getElementById("calendarDays");
+const monthTitle = document.getElementById("monthTitle");
+const locationBadge = document.getElementById("locationBadge");
+const summaryLocation = document.getElementById("summaryLocation");
+const summaryDate = document.getElementById("summaryDate");
+const summaryTime = document.getElementById("summaryTime");
+const timeSelect = document.getElementById("time");
+const bookingForm = document.getElementById("bookingForm");
+const statusEl = document.getElementById("status");
+const submitBtn = document.getElementById("submitBtn");
+
+const monthNames = [
+  "Januar", "Februar", "Marec", "April", "Maj", "Junij",
+  "Julij", "Avgust", "September", "Oktober", "November", "December"
+];
+
+let selectedLocation = "";
+let selectedAddress = "";
+let selectedDate = "";
+
+const today = new Date();
+today.setHours(0, 0, 0, 0);
+
+let viewYear = today.getFullYear();
+let viewMonth = today.getMonth();
+
+/*
+  Urnik:
+  Ribnica:
+  Sreda: 15:45, 16:00, 16:30, 17:00 ... 20:00
+  Petek: 15:45, 16:00, 16:30, 17:00 ... 20:00
+  Sobota: 15:00, 15:30, 16:00 ... 20:00
+
+  Škofljica:
+  Torek in četrtek: 15:00, 15:30 ... 19:00
+
+  To so prikazani začetni časi, ne preverjanje zasedenosti.
+*/
+
+const schedules = {
+  Ribnica: {
+    3: ["15:45"],
+    5: ["15:45", "16:00", "16:30", "17:00", "17:30", "18:00", "18:30", "19:00", "19:30", "20:00"],
+    6: ["15:00", "15:30", "16:00", "16:30", "17:00", "17:30", "18:00", "18:30", "19:00", "19:30", "20:00"]
+  },
+  "Škofljica": {
+    2: ["15:00", "15:30", "16:00", "16:30", "17:00", "17:30", "18:00", "18:30", "19:00"],
+    4: ["15:00", "15:30", "16:00", "16:30", "17:00", "17:30", "18:00", "18:30", "19:00"]
+  }
+};
+
+function localDateString(date) {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+  return `${year}-${month}-${day}`;
+}
+
+function formatDate(dateString) {
+  const [year, month, day] = dateString.split("-").map(Number);
+  return new Intl.DateTimeFormat("sl-SI", {
+    day: "numeric", month: "long", year: "numeric"
+  }).format(new Date(year, month - 1, day));
+}
+
+function getAvailableTimes(dateString) {
+  if (!selectedLocation || !dateString) return [];
+  const [year, month, day] = dateString.split("-").map(Number);
+  const date = new Date(year, month - 1, day);
+  return schedules[selectedLocation]?.[date.getDay()] || [];
+}
+
+function chooseLocation(button) {
+  selectedLocation = button.dataset.location;
+  selectedAddress = button.dataset.address;
+  selectedDate = "";
+
+  locationButtons.forEach(item => {
+    item.classList.toggle("active", item === button);
+    item.setAttribute("aria-pressed", item === button ? "true" : "false");
+  });
+
+  locationBadge.textContent = "📍 " + selectedLocation + " — " + selectedAddress;
+  calendarSection.classList.add("visible");
+  formSection.classList.remove("visible");
+  statusEl.textContent = "";
+  renderCalendar();
+
+  calendarSection.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+locationButtons.forEach(button => {
+  button.addEventListener("click", () => chooseLocation(button));
+});
+
+function renderCalendar() {
+  calendarDays.replaceChildren();
+  monthTitle.textContent = monthNames[viewMonth] + " " + viewYear;
+
+  const firstDay = new Date(viewYear, viewMonth, 1);
+  const daysInMonth = new Date(viewYear, viewMonth + 1, 0).getDate();
+  const offset = (firstDay.getDay() + 6) % 7;
+
+  for (let i = 0; i < offset; i++) {
+    const empty = document.createElement("div");
+    empty.setAttribute("aria-hidden", "true");
+    calendarDays.appendChild(empty);
+  }
+
+  for (let day = 1; day <= daysInMonth; day++) {
+    const date = new Date(viewYear, viewMonth, day);
+    const dateString = localDateString(date);
+    const button = document.createElement("button");
+
+    button.type = "button";
+    button.className = "day";
+    button.textContent = day;
+    button.setAttribute("aria-label", formatDate(dateString));
+
+    const isWorkingDay = getAvailableTimes(dateString).length > 0;
+    const isPastDate = date < today;
+    button.disabled = isPastDate || !isWorkingDay;
+
+    if (date.getTime() === today.getTime()) button.classList.add("today");
+
+    if (dateString === selectedDate) {
+      button.classList.add("selected");
+      button.setAttribute("aria-pressed", "true");
+    } else {
+      button.setAttribute("aria-pressed", "false");
+    }
+
+    button.addEventListener("click", () => {
+      if (button.disabled) return;
+      selectedDate = dateString;
+      statusEl.textContent = "";
+      renderCalendar();
+      showBookingForm();
+    });
+
+    calendarDays.appendChild(button);
+  }
+
+  const currentMonthStart = new Date(viewYear, viewMonth, 1);
+  const thisMonthStart = new Date(today.getFullYear(), today.getMonth(), 1);
+  document.getElementById("prevMonth").disabled = currentMonthStart <= thisMonthStart;
+}
+
+document.getElementById("prevMonth").addEventListener("click", () => {
+  if (viewMonth === 0) {
+    viewYear--;
+    viewMonth = 11;
+  } else {
+    viewMonth--;
+  }
+  renderCalendar();
+});
+
+document.getElementById("nextMonth").addEventListener("click", () => {
+  if (viewMonth === 11) {
+    viewYear++;
+    viewMonth = 0;
+  } else {
+    viewMonth++;
+  }
+  renderCalendar();
+});
+
+function updateAvailableTimes() {
+  timeSelect.replaceChildren();
+
+  const placeholder = document.createElement("option");
+  placeholder.value = "";
+  placeholder.textContent = "Izberite uro";
+  timeSelect.appendChild(placeholder);
+
+  getAvailableTimes(selectedDate).forEach(time => {
+    const option = document.createElement("option");
+    option.value = time;
+    option.textContent = time;
+    timeSelect.appendChild(option);
+  });
+}
+
+function showBookingForm() {
+  if (!selectedLocation || !selectedDate) return;
+
+  updateAvailableTimes();
+
+  document.getElementById("chosenLocation").value =
+    selectedLocation + " — " + selectedAddress;
+  document.getElementById("chosenDate").value = selectedDate;
+
+  summaryLocation.textContent = selectedLocation + " — " + selectedAddress;
+  summaryDate.textContent = formatDate(selectedDate);
+  summaryTime.textContent = "Čas še ni izbran";
+
+  formSection.classList.add("visible");
+  formSection.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+timeSelect.addEventListener("change", () => {
+  summaryTime.textContent = timeSelect.value || "Čas še ni izbran";
+});
+
+document.getElementById("changeDate").addEventListener("click", () => {
+  formSection.classList.remove("visible");
+  locationSection.scrollIntoView({ behavior: "smooth", block: "start" });
+});
+
+bookingForm.addEventListener("submit", async event => {
+  event.preventDefault();
+
+  if (!selectedLocation || !selectedDate) {
+    statusEl.textContent = "Prosimo, izberite lokacijo in datum.";
+    return;
+  }
+
+  const [year, month, day] = selectedDate.split("-").map(Number);
+  const selected = new Date(year, month - 1, day);
+
+  if (selected < today) {
+    statusEl.textContent = "Izbrani datum je v preteklosti. Izberite nov datum.";
+    return;
+  }
+
+  const validTimes = getAvailableTimes(selectedDate);
+  if (!timeSelect.value || !validTimes.includes(timeSelect.value)) {
+    statusEl.textContent = "Prosimo, izberite veljavno uro iz seznama.";
+    timeSelect.focus();
+    return;
+  }
+
+  submitBtn.disabled = true;
+  submitBtn.textContent = "Pošiljam...";
+  statusEl.textContent = "";
+
+  try {
+    const response = await fetch("https://formspree.io/f/mvzedvzw", {
+      method: "POST",
+      body: new FormData(bookingForm),
+      headers: { "Accept": "application/json" }
+    });
+
+    if (!response.ok) throw new Error("Pošiljanje ni uspelo.");
+
+    statusEl.textContent =
+      "Hvala! Vaše povpraševanje je poslano. Termin je potrjen šele po dogovoru.";
+
+    bookingForm.reset();
+    timeSelect.value = "";
+    summaryTime.textContent = "Čas še ni izbran";
+  } catch (error) {
+    statusEl.textContent =
+      "Povpraševanja ni bilo mogoče poslati. Poskusite znova ali nas pokličite na 041 758 938.";
+  } finally {
+    submitBtn.disabled = false;
+    submitBtn.textContent = "Pošlji povpraševanje za termin";
+  }
+});
+
+renderCalendar();
+</script>
+</body>
+</html>
