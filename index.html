@@ -608,6 +608,10 @@ form.addEventListener("submit", async function(e) {
 
   tab.addEventListener('click', openNewsletter);
   close.addEventListener('click', closeNewsletter);
+  document.querySelector('#sib-form button[type="submit"]')
+  .addEventListener('click', function() {
+    setTimeout(closeNewsletter, 250);
+  });
   overlay.addEventListener('click', function(e){ if(e.target === overlay) closeNewsletter(); });
   document.addEventListener('keydown', function(e){
     if(e.key === 'Escape' && overlay.classList.contains('is-open')) closeNewsletter();
