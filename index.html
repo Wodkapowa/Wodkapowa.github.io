@@ -583,41 +583,68 @@ form.addEventListener("submit", async function(e) {
   }
 });
 
-// Newsletter popup: samodejni prikaz po 5 sekundah; po zaprtju ostane samo desni zavihek.
+// Newsletter popup: samodejni prikaz samo prvič, po 6 sekundah.
 (function(){
   const overlay = document.getElementById('newsletterOverlay');
   const tab = document.getElementById('newsletterTab');
   const close = document.getElementById('newsletterClose');
-  const dismissedKey = 'rajskiSvetNewsletterDismissed';
+
+  const shownKey = 'rajskiSvetNewsletterShown';
 
   function openNewsletter(){
+    try {
+      localStorage.setItem(shownKey, '1');
+    } catch(e) {}
+
     overlay.classList.add('is-open');
     overlay.setAttribute('aria-hidden','false');
     tab.setAttribute('aria-expanded','true');
     document.body.classList.add('newsletter-open');
+
     window.setTimeout(() => document.getElementById('EMAIL').focus(), 50);
   }
+
   function closeNewsletter(){
     overlay.classList.remove('is-open');
     overlay.setAttribute('aria-hidden','true');
     tab.setAttribute('aria-expanded','false');
     document.body.classList.remove('newsletter-open');
-    try { localStorage.setItem(dismissedKey, '1'); } catch(e) {}
     tab.focus();
   }
 
+  // Ročno odpiranje in zapiranje
   tab.addEventListener('click', openNewsletter);
   close.addEventListener('click', closeNewsletter);
-  document.querySelector('#sib-form button[type="submit"]')
-  .addEventListener('click', function() {
-    setTimeout(closeNewsletter, 250);
-  });
-  overlay.addEventListener('click', function(e){ if(e.target === overlay) closeNewsletter(); });
-  document.addEventListener('keydown', function(e){
-    if(e.key === 'Escape' && overlay.classList.contains('is-open')) closeNewsletter();
+
+  // Zapri popup ob kliku na prijavo
+  const submitButton = document.querySelector('#sib-form button[type="submit"]');
+
+  if (submitButton) {
+    submitButton.addEventListener('click', function() {
+      setTimeout(closeNewsletter, 250);
+    });
+  }
+
+  // Samodejno odpiranje samo prvič, po 6 sekundah
+  try {
+    if (!localStorage.getItem(shownKey)) {
+      window.setTimeout(openNewsletter, 6000);
+    }
+  } catch(e) {
+    window.setTimeout(openNewsletter, 6000);
+  }
+
+  // Zapiranje s klikom zunaj okna
+  overlay.addEventListener('click', function(e){
+    if(e.target === overlay) closeNewsletter();
   });
 
-  if(!localStorage.getItem(dismissedKey)) window.setTimeout(openNewsletter, 5000);
+  // Zapiranje s tipko ESC
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && overlay.classList.contains('is-open')) {
+      closeNewsletter();
+    }
+  });
 
 })();
 
