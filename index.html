@@ -89,7 +89,117 @@ footer h2{font-family:"Cormorant Garamond",serif;font-size:45px;color:#fff}
 *{scroll-behavior:auto;transition:none!important}
 }
     
+
+
+/* NEWSLETTER POPUP + DESNI ZAVIHEK */
+.newsletter-tab{
+  position:fixed;right:0;top:50%;transform:translateY(-50%);z-index:1200;
+  writing-mode:vertical-rl;transform-origin:center;
+  border:0;border-radius:12px 0 0 12px;background:var(--primary);color:#fff;
+  padding:16px 10px;font:500 13px Poppins,sans-serif;letter-spacing:1px;
+  box-shadow:0 5px 18px rgba(92,68,53,.22);cursor:pointer;
+  transition:background .2s,right .2s;
+}
+.newsletter-tab:hover{background:var(--primary-hover);right:2px}
+.newsletter-overlay{
+  position:fixed;inset:0;z-index:1300;display:none;align-items:center;justify-content:center;
+  padding:20px;background:rgba(45,34,27,.48);backdrop-filter:blur(3px);
+}
+.newsletter-overlay.is-open{display:flex}
+.newsletter-popup{
+  position:relative;width:min(460px,100%);padding:42px 36px 34px;text-align:center;
+  background:var(--background);border:1px solid var(--border);border-radius:25px;
+  box-shadow:0 25px 75px rgba(35,25,18,.25);animation:newsletterIn .28s ease-out;
+}
+@keyframes newsletterIn{from{opacity:0;transform:translateY(12px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
+.newsletter-close{
+  position:absolute;top:12px;right:15px;width:34px;height:34px;border:0;border-radius:50%;
+  background:transparent;color:var(--heading);font:300 27px Poppins,sans-serif;cursor:pointer;
+}
+.newsletter-close:hover{background:var(--section)}
+.newsletter-eyebrow{display:block;margin-bottom:9px;color:var(--primary);font-size:11px;letter-spacing:2px;text-transform:uppercase}
+.newsletter-popup h2{margin:0 0 12px;font:600 39px/1.08 "Cormorant Garamond",serif;color:var(--heading)}
+.newsletter-popup p{margin:0 0 22px;color:var(--text);font-size:14px;line-height:1.7}
+.newsletter-form{display:flex;flex-direction:column;gap:12px}
+.newsletter-form input{margin:0;background:#fff}
+.newsletter-form .btn{width:100%;padding:13px 20px}
+.newsletter-privacy{display:block;margin-top:14px;color:var(--text);font-size:10px;line-height:1.5}
+.newsletter-message{min-height:20px;margin-top:10px!important;font-size:12px!important}
+body.newsletter-open{overflow:hidden}
+@media(max-width:600px){
+  .newsletter-popup{padding:38px 23px 27px;border-radius:21px}
+  .newsletter-popup h2{font-size:34px}
+  .newsletter-tab{padding:14px 8px;font-size:12px}
+}
+
 </style>
+
+<!-- Brevo: potrebni slogi in skripta za varno oddajo prijave -->
+<link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
+<style>
+  @font-face {
+    font-display: block;
+    font-family: Roboto;
+    src: url(https://assets.brevo.com/font/Roboto/Latin/normal/normal/7529907e9eaf8ebb5220c5f9850e3811.woff2) format("woff2"),
+         url(https://assets.brevo.com/font/Roboto/Latin/normal/normal/25c678feafdc175a70922a116c9be3e7.woff) format("woff");
+  }
+  #sib-container input::placeholder { color: #9b8c80; }
+  #sib-container a { color: var(--primary); }
+  #sib-container .entry__error { color: #9b2c2c; }
+  #sib-container .sib-form-block { padding: 0 !important; }
+  #sib-container .entry__label,
+  #sib-container .entry__specification { display: none !important; }
+  #sib-container .entry__field { border: 0 !important; padding: 0 !important; }
+  #sib-container input#EMAIL {
+    width: 100% !important;
+    padding: 15px !important;
+    margin: 0 !important;
+    border: 1px solid var(--border) !important;
+    border-radius: 15px !important;
+    background: #fff !important;
+    color: var(--text) !important;
+    font: 14px Poppins, sans-serif !important;
+    box-shadow: none !important;
+  }
+  #sib-container .sib-form-block__button {
+    width: 100% !important;
+    min-height: 48px;
+    padding: 13px 20px !important;
+    border: 0 !important;
+    border-radius: 50px !important;
+    background: var(--primary) !important;
+    color: #fff !important;
+    font: 600 16px Poppins, sans-serif !important;
+    text-align: center !important;
+    cursor: pointer;
+  }
+  #sib-container .sib-form-block__button:hover { background: var(--primary-hover) !important; }
+  #sib-container .sib-form-block__button:disabled { opacity: .65; cursor: wait; }
+  #sib-container .sib-form-message-panel {
+    max-width: none !important;
+    margin: 10px 0 0 !important;
+    padding: 10px 12px !important;
+    border-radius: 12px !important;
+    font: 12px/1.5 Poppins, sans-serif !important;
+    text-align: left !important;
+  }
+  #sib-container .sib-form-message-panel__text { font: inherit !important; }
+  #sib-container .sib-form-message-panel__inner-text { font: inherit !important; }
+  #sib-container .sib-form-message-panel svg { flex: 0 0 18px; }
+  #sib-container .sib-form-message-panel--success { color: #245b3a; }
+  #sib-container .sib-form-message-panel--error { color: #8a2929; }
+  #sib-container .sib-form-message-panel { display: none; }
+  #sib-container .sib-form-message-panel[style*="display: block"] { display: block !important; }
+  #sib-container .sib-form { background: transparent !important; }
+  #sib-container .sib-container--large,
+  #sib-container.sib-container--large {
+    max-width: none !important;
+    padding: 0 !important;
+    border: 0 !important;
+    background: transparent !important;
+  }
+</style>
+
 </head>
 
 <body>
@@ -380,6 +490,61 @@ footer h2{font-family:"Cormorant Garamond",serif;font-size:45px;color:#fff}
 </p>
 </footer>
 
+
+<!-- NEWSLETTER POPUP -->
+<button class="newsletter-tab" id="newsletterTab" type="button" aria-controls="newsletterOverlay" aria-expanded="false">E-NOVICE</button>
+<div class="newsletter-overlay" id="newsletterOverlay" aria-hidden="true">
+  <section class="newsletter-popup" role="dialog" aria-modal="true" aria-labelledby="newsletterTitle">
+    <button class="newsletter-close" id="newsletterClose" type="button" aria-label="Zapri okno">×</button>
+    <span class="newsletter-eyebrow">Rajski Svet</span>
+    <h2 id="newsletterTitle">Trenutki razvajanja<br>v vašem nabiralniku</h2>
+    <p>Prijavite se na e-novice in bodite med prvimi obveščeni o novostih, posebnih ponudbah in trenutkih za sprostitev.</p>
+    <div class="sib-form" id="sib-form-container" style="background:transparent;text-align:center">
+      <div id="error-message" class="sib-form-message-panel" role="alert" style="display:none">
+        <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
+          <span class="sib-form-message-panel__inner-text">Prijave trenutno ni bilo mogoče shraniti. Poskusite znova.</span>
+        </div>
+      </div>
+      <div id="success-message" class="sib-form-message-panel" role="status" style="display:none">
+        <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
+          <span class="sib-form-message-panel__inner-text">Hvala! Uspešno ste se prijavili na e-novice Rajskega Sveta.</span>
+        </div>
+      </div>
+      <div id="sib-container" class="sib-container--large sib-container--vertical">
+        <form class="newsletter-form" id="sib-form" method="POST"
+          action="https://f6a7f9a3.sibforms.com/serve/MUIFACZ8wHWKKYImXtyg3IKL5qulI8AznmfoUvhCEdEMPmudb-SipkK24JCDgEcFm6Ldkebt2fA47Zr0sFhPby6iuQXuw12dqPHDOItIa4rCMzZ2Mq67zVDsYgXa09gRlaymuiJUYwIQdQAPt5AL2sE7sGlqj15N3zjxWeL5l_WWyMpKPqhTgUfip7CpDaS0nn6ARYh73f6Kv49KqQ=="
+          data-type="subscription">
+          <div class="sib-input sib-form-block">
+            <div class="form__entry entry_block">
+              <div class="form__label-row">
+                <div class="entry__field">
+                  <input class="input" type="email" id="EMAIL" name="EMAIL"
+                    autocomplete="email" value="" placeholder="Vaš e-poštni naslov"
+                    data-required="true" required />
+                </div>
+              </div>
+              <label class="entry__error entry__error--primary"></label>
+            </div>
+          </div>
+          <div class="sib-form-block">
+            <button class="sib-form-block__button sib-form-block__button-with-loader"
+              form="sib-form" type="submit">
+              <svg class="icon clickable__icon progress-indicator__icon sib-hide-loader-icon" viewBox="0 0 512 512" aria-hidden="true">
+                <path d="M460.116 373.846l-20.823-12.022c-5.541-3.199-7.54-10.159-4.663-15.874 30.137-59.886 28.343-131.652-5.386-189.946-33.641-58.394-94.896-95.833-161.827-99.676C261.028 55.961 256 50.751 256 44.352V20.309c0-6.904 5.808-12.337 12.703-11.982 83.556 4.306 160.163 50.864 202.11 123.677 42.063 72.696 44.079 162.316 6.031 236.832-3.14 6.148-10.75 8.461-16.728 5.01z" />
+              </svg>
+              Prijavi se na e-novice
+            </button>
+          </div>
+          <input type="text" name="email_address_check" value="" class="input--hidden" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <input type="hidden" name="locale" value="en">
+        </form>
+      </div>
+    </div>
+    <small class="newsletter-privacy">S prijavo soglašate s prejemanjem e-novic. Odjavite se lahko kadarkoli.</small>
+    <p class="newsletter-message" id="newsletterMessage" role="status" aria-live="polite"></p>
+  </section>
+</div>
+
 <script>
 const form = document.getElementById("kontaktForm");
 const statusEl = document.getElementById("status");
@@ -417,7 +582,66 @@ form.addEventListener("submit", async function(e) {
     btn.textContent = "Pošlji";
   }
 });
+
+// Newsletter popup: samodejni prikaz po 5 sekundah; po zaprtju ostane samo desni zavihek.
+(function(){
+  const overlay = document.getElementById('newsletterOverlay');
+  const tab = document.getElementById('newsletterTab');
+  const close = document.getElementById('newsletterClose');
+  const dismissedKey = 'rajskiSvetNewsletterDismissed';
+
+  function openNewsletter(){
+    overlay.classList.add('is-open');
+    overlay.setAttribute('aria-hidden','false');
+    tab.setAttribute('aria-expanded','true');
+    document.body.classList.add('newsletter-open');
+    window.setTimeout(() => document.getElementById('EMAIL').focus(), 50);
+  }
+  function closeNewsletter(){
+    overlay.classList.remove('is-open');
+    overlay.setAttribute('aria-hidden','true');
+    tab.setAttribute('aria-expanded','false');
+    document.body.classList.remove('newsletter-open');
+    try { localStorage.setItem(dismissedKey, '1'); } catch(e) {}
+    tab.focus();
+  }
+
+  tab.addEventListener('click', openNewsletter);
+  close.addEventListener('click', closeNewsletter);
+  overlay.addEventListener('click', function(e){ if(e.target === overlay) closeNewsletter(); });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && overlay.classList.contains('is-open')) closeNewsletter();
+  });
+
+  if(!localStorage.getItem(dismissedKey)) window.setTimeout(openNewsletter, 5000);
+
+})();
+
 </script>
+
+
+<!-- Brevo: jezik in validacija prijavnega obrazca -->
+<script>
+  window.REQUIRED_CODE_ERROR_MESSAGE = 'Prosimo, izberite kodo države';
+  window.LOCALE = 'en';
+  window.EMAIL_INVALID_MESSAGE = 'Vneseni e-poštni naslov ni veljaven. Preverite zapis.';
+  window.SMS_INVALID_MESSAGE = 'Vneseni podatki niso veljavni.';
+  window.REQUIRED_ERROR_MESSAGE = 'To polje je obvezno.';
+  window.GENERIC_INVALID_MESSAGE = 'Vneseni podatki niso veljavni. Preverite zapis.';
+  window.INVALID_NUMBER = 'Vnesena številka ni veljavna.';
+  window.INVALID_DATE = 'Vnesite veljaven datum.';
+  window.REQUIRED_MULTISELECT_MESSAGE = 'Izberite vsaj eno možnost.';
+  window.translation = {
+    common: {
+      selectedList: '{quantity} izbran seznam',
+      selectedLists: '{quantity} izbranih seznamov',
+      selectedOption: '{quantity} izbrana možnost',
+      selectedOptions: '{quantity} izbranih možnosti'
+    }
+  };
+  var AUTOHIDE = Boolean(0);
+</script>
+<script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
 
 </body>
 </html>
